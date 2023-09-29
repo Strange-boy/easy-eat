@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LOGO_HEADER } from "../utils/constants";
 
 //we would also require a header component
@@ -7,6 +7,10 @@ export const Header = () => {
 
 	const [logButton, setLogButton] = useState("Login");
 	console.log("Header rendered");
+
+	useEffect(() => {
+		console.log("UseEffect called!!");
+	}, [logButton]);
 
 	return (
 		<div className="header">

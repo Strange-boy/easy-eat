@@ -22,7 +22,7 @@ const Body = () => {
 		const response = await fetch(SWIGGY_API);
 
 		const jsonData = await response.json();
-		// console.log(jsonData);
+		console.log(jsonData);
 
 		// console.log(
 		// 	jsonData.data.cards[5].card.card.gridElements.infoWithStyle.restaurants

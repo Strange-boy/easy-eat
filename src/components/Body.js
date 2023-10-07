@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCards from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 //now we would try to create a body component
 const Body = () => {
@@ -10,7 +11,7 @@ const Body = () => {
 	const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 	const [searchValue, setSearchValue] = useState("");
 
-	console.log("Body renders");
+	// console.log("Body renders");
 
 	//we are going to learn about useEffect
 	useEffect(() => {
@@ -20,9 +21,8 @@ const Body = () => {
 	//function to fetch the data
 	const fetchData = async () => {
 		const response = await fetch(SWIGGY_API);
-
 		const jsonData = await response.json();
-		console.log(jsonData);
+		// console.log(jsonData);
 
 		// console.log(
 		// 	jsonData.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
@@ -98,7 +98,13 @@ const Body = () => {
 			<div className="restro-container">
 				{/* we would use a container for individual restaurant cards */}
 				{filteredRestaurant.map((restaurant) => (
-					<RestaurantCards key={restaurant.info.id} resData={restaurant} />
+					<Link
+						key={restaurant.info.id}
+						to={"restaurant/" + restaurant.info.id}
+						className="restroCard-links"
+					>
+						<RestaurantCards resData={restaurant} />
+					</Link>
 				))}
 			</div>
 		</div>

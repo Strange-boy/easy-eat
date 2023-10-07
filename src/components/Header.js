@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { LOGO_HEADER } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 //we would also require a header component
 export const Header = () => {
@@ -19,9 +20,21 @@ export const Header = () => {
 			</div>
 			<div className="nav-container">
 				<ul>
-					<li>Home</li>
-					<li>About us</li>
-					<li>Contact us</li>
+					<li>
+						<Link className="header-links" to="/">
+							Home
+						</Link>
+					</li>
+					<li>
+						<Link className="header-links" to="/about">
+							About us
+						</Link>
+					</li>
+					<li>
+						<Link className="header-links" to="/contact">
+							Contact us
+						</Link>
+					</li>
 					<li>Cart</li>
 					<button
 						className="log-btn"

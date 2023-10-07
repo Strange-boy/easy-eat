@@ -7,3 +7,8 @@ export const LOGO_HEADER =
 
 export const SWIGGY_API =
 	"https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.498066699999999&lng=76.3388484&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const SWIGGY_RESTRO_MENU_P1 =
+	"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.498066699999999&lng=76.3388484&restaurantId=";
+
+export const SWIGGY_RESTRO_MENU_P2 = "&catalog_qa=undefined&submitAction=ENTER";

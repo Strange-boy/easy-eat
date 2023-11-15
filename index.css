@@ -86,3 +86,10 @@
 	text-decoration: none;
 	color: #000;
 }
+
+/* in order to style the user*/
+.user-container {
+	border: 1px solid black;
+	padding: 5px;
+	margin: 1rem;
+}

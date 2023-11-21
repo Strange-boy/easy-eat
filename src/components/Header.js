@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { LOGO_HEADER } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 //we would also require a header component
 export const Header = () => {
 	//lets try to create log button
 
 	const [logButton, setLogButton] = useState("Login");
-	console.log("Header rendered");
+	const onlineStatus = useOnlineStatus();
 
 	useEffect(() => {
 		console.log("UseEffect called!!");
@@ -20,6 +21,7 @@ export const Header = () => {
 			</div>
 			<div className="nav-container">
 				<ul>
+					<li>Online status: {onlineStatus ? "✅" : "❎"}</li>
 					<li>
 						<Link className="header-links" to="/">
 							Home

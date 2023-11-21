@@ -3,6 +3,7 @@ import RestaurantCards from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 //now we would try to create a body component
 const Body = () => {
@@ -46,6 +47,12 @@ const Body = () => {
 		// 	jsonData.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
 		// );
 	};
+
+	//in order to display the online status
+	const onlineStatus = useOnlineStatus();
+
+	if (onlineStatus === false)
+		return <h1>OOps!! Seems like you went offline XD</h1>;
 
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (

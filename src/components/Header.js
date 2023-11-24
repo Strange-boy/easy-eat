@@ -37,6 +37,11 @@ export const Header = () => {
 							Contact us
 						</Link>
 					</li>
+					<li>
+						<Link className="header-links" to="/grocery">
+							Grocery
+						</Link>
+					</li>
 					<li>Cart</li>
 					<button
 						className="log-btn"

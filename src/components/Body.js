@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RestaurantCards from "./RestaurantCards";
+import RestaurantCards, { withBestSellingRestro } from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -12,7 +12,8 @@ const Body = () => {
 	const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 	const [searchValue, setSearchValue] = useState("");
 
-	// console.log("Body renders");
+	//in order to display the best selling restaurant
+	const BestRestaurantCards = withBestSellingRestro(RestaurantCards);
 
 	//we are going to learn about useEffect
 	useEffect(() => {
@@ -104,15 +105,23 @@ const Body = () => {
 			</div>
 			<div className="flex flex-wrap mx-auto w-4/5 ">
 				{/* we would use a container for individual restaurant cards */}
-				{filteredRestaurant.map((restaurant) => (
-					<Link
-						key={restaurant.info.id}
-						to={"restaurant/" + restaurant.info.id}
-						className="mx-auto"
-					>
-						<RestaurantCards resData={restaurant} />
-					</Link>
-				))}
+				{filteredRestaurant.map((restaurant) => {
+					console.log("restro details:", restaurant);
+					return (
+						<Link
+							key={restaurant.info.id}
+							to={"restaurant/" + restaurant.info.id}
+							className="mx-auto"
+						>
+							{/* { logic to write the restaurant whether it is a best seller or not} */}
+							{restaurant.info.avgRating > 4 ? (
+								<BestRestaurantCards resData={restaurant} />
+							) : (
+								<RestaurantCards resData={restaurant} />
+							)}
+						</Link>
+					);
+				})}
 			</div>
 		</div>
 	);

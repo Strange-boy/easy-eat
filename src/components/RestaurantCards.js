@@ -17,12 +17,7 @@ const RestaurantCards = (props) => {
 
 	return (
 		<div className="m-2 p-2 w-80 hover:shadow-xl hover:scale-105 hover:ease-in duration-300 ">
-			<div
-				className="restro-card"
-				style={{
-					backgroundColor: "#f0f0f0",
-				}}
-			>
+			<div className="restro-card">
 				<img
 					className="h-72 w-full rounded-lg object-cover"
 					src={CDN_URL + cloudinaryImageId}
@@ -43,6 +38,26 @@ const RestaurantCards = (props) => {
 			</div>
 		</div>
 	);
+};
+
+//Higher Order Component => Contract: Display the best selling restaurant
+//input => restaurant list
+//output => restaurant with rating > 4 with best seller badge
+
+export const withBestSellingRestro = (RestaurantCards) => {
+	return (props) => {
+		return (
+			<div>
+				<label
+					htmlFor=""
+					className="absolute z-10 bg-indigo-500 m-2 p-2 font-semibold text-slate-100 rounded-e-lg hover:scale-105 hover:ease-in duration-300"
+				>
+					Best Seller
+				</label>
+				<RestaurantCards {...props} />
+			</div>
+		);
+	};
 };
 
 export default RestaurantCards;

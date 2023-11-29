@@ -21,31 +21,46 @@ export const Header = () => {
 			</div>
 			<div className="flex items-center text-xl font-bold">
 				<ul className="flex p-2">
-					<li className="pr-2 text-lg">
+					<li className="pr-2 text-lg ">
 						Online status: {onlineStatus ? "✅" : "❎"}
 					</li>
 					<li>
-						<Link className="px-2 text-lg" to="/">
+						<Link
+							className="mx-1 px-2 text-lg hover:border-b-4 hover:border-indigo-500"
+							to="/"
+						>
 							Home
 						</Link>
 					</li>
 					<li>
-						<Link className="px-2 text-lg" to="/about">
+						<Link
+							className="mx-1 px-2 text-lg hover:border-b-4 hover:border-indigo-500"
+							to="/about"
+						>
 							About us
 						</Link>
 					</li>
 					<li>
-						<Link className="px-2 text-lg" to="/contact">
+						<Link
+							className="mx-1 px-2 text-lg hover:border-b-4 hover:border-indigo-500"
+							to="/contact"
+						>
 							Contact us
 						</Link>
 					</li>
 					<li>
-						<Link className="px-2 text-lg" to="/grocery">
+						<Link
+							className="mx-1 px-2 text-lg hover:border-b-4 hover:border-indigo-500"
+							to="/grocery"
+						>
 							Grocery
 						</Link>
 					</li>
 					<li className="">
-						<Link className="px-2 text-lg" to="/">
+						<Link
+							className="mx-1 px-2 text-lg hover:border-b-4 hover:border-indigo-500"
+							to="/"
+						>
 							Cart
 						</Link>
 					</li>

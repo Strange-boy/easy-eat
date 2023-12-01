@@ -12,3 +12,6 @@ export const SWIGGY_RESTRO_MENU_P1 =
 	"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.498066699999999&lng=76.3388484&restaurantId=";
 
 export const SWIGGY_RESTRO_MENU_P2 = "&catalog_qa=undefined&submitAction=ENTER";
+
+export const ITEM_CATEGORY_LIST =
+	"type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";

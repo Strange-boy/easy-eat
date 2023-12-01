@@ -2,7 +2,7 @@ import { CDN_URL } from "../../src/utils/constants";
 
 //now we would use restaurant cards to call each of the restaurants
 const RestaurantCards = (props) => {
-	console.log(props);
+	// console.log(props);
 	const { resData } = props;
 
 	const {

@@ -10,10 +10,6 @@ export const Header = () => {
 	const [logButton, setLogButton] = useState("Login");
 	const onlineStatus = useOnlineStatus();
 
-	useEffect(() => {
-		console.log("UseEffect called!!");
-	}, [logButton]);
-
 	return (
 		<div className="flex justify-between m-3 shadow-md">
 			<div className="m-2">

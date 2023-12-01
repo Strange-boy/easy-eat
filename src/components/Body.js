@@ -106,7 +106,6 @@ const Body = () => {
 			<div className="flex flex-wrap mx-auto w-4/5 ">
 				{/* we would use a container for individual restaurant cards */}
 				{filteredRestaurant.map((restaurant) => {
-					console.log("restro details:", restaurant);
 					return (
 						<Link
 							key={restaurant.info.id}

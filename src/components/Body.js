@@ -60,18 +60,18 @@ const Body = () => {
 		<Shimmer />
 	) : (
 		<div className="body">
-			<div className="filter flex justify-center my-2">
+			<div className="filter flex justify-center my-6">
 				<div className="">
 					<input
 						type="text"
-						className="px- 3 border-2 rounded-full border-indigo-400"
+						className="px- 3 border-2 rounded-full border-gray-500"
 						value={searchValue}
 						onChange={(e) => {
 							setSearchValue(e.target.value);
 						}}
 					/>
 					<button
-						className="mx-2 px-2 py-0 bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow-lg text-stone-50 font-semibold"
+						className="mx-2 px-2 py-1 bg-gray-500 hover:bg-gray-800 rounded-xl shadow-lg text-stone-50 font-semibold"
 						onClick={() => {
 							//Filter the restaurant and display them according to the name
 							console.log(searchValue);
@@ -89,7 +89,7 @@ const Body = () => {
 					</button>
 				</div>
 				<button
-					className="mx-1 px-1 py-0 bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow-lg text-stone-50 font-semibold"
+					className="mx-1 px-2 py-0 bg-gray-500 hover:bg-gray-800 rounded-lg shadow-lg text-stone-50 font-semibold"
 					onClick={() => {
 						// console.log("Before items", listOfRestaurant);
 						const topRestaurant = listOfRestaurant.filter((rest) => {

@@ -1,5 +1,7 @@
 import { CDN_URL } from "../../src/utils/constants";
 
+import RatingSvg from "../svg/RatingSvg";
+
 //now we would use restaurant cards to call each of the restaurants
 const RestaurantCards = (props) => {
 	// console.log(props);
@@ -16,18 +18,24 @@ const RestaurantCards = (props) => {
 	} = resData.info;
 
 	return (
-		<div className="m-2 p-2 w-80 hover:shadow-xl hover:scale-105 hover:ease-in duration-300 ">
+		<div className="m-2 p-2 w-[340px] hover:shadow-xl hover:scale-105 hover:ease-in duration-300 ">
 			<div className="restro-card">
 				<img
-					className="h-72 w-full rounded-lg object-cover"
+					className="h-64 w-full rounded-2xl object-cover"
 					src={CDN_URL + cloudinaryImageId}
 					alt={name + "-image"}
 				/>
-				<div className="mt-2 mx-1">
-					<h3 className="font-bold text-lg">{name}</h3>
-					<div>
-						<span className="font-bold text-lg">⭐ {avgRating} . </span>
-						<span className="font-bold text-lg ml-1">
+				<div className="mt-2 mx-1 text-gray-700">
+					<h3 className="font-bold text-lg leading-6">{name}</h3>
+					<div className="flex">
+						<span className="font-bold text-sm flex items-center">
+							<p className="pr-1">
+								<RatingSvg />
+							</p>
+							<div>{avgRating} </div>
+							<p className="font-extrabold">.</p>
+						</span>
+						<span className="font-bold text-sm ml-1">
 							{sla.deliveryTime} mins
 						</span>
 					</div>
@@ -50,7 +58,7 @@ export const withBestSellingRestro = (RestaurantCards) => {
 			<div>
 				<label
 					htmlFor=""
-					className="absolute z-10 bg-indigo-500 m-2 p-2 font-semibold text-slate-100 rounded-e-lg hover:scale-105 hover:ease-in duration-300"
+					className="absolute z-10 bg-green-600 m-2 p-2 font-semibold text-slate-100 rounded-e-lg hover:scale-105 hover:ease-in duration-300"
 				>
 					Best Seller
 				</label>

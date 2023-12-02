@@ -1,4 +1,4 @@
-export default function RatingSvg() {
+const RatingSvg = () => {
 	return (
 		<svg
 			width="20"
@@ -35,4 +35,6 @@ export default function RatingSvg() {
 			</defs>
 		</svg>
 	);
-}
+};
+
+export default RatingSvg;

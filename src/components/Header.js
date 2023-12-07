@@ -21,8 +21,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
-							activeClassName="active-link"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950  underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
 							to="/"
 						>
 							Home
@@ -30,7 +29,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
 							to="/about"
 						>
 							About us
@@ -38,7 +37,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
 							to="/contact"
 						>
 							Contact us
@@ -46,7 +45,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
 							to="/grocery"
 						>
 							Grocery

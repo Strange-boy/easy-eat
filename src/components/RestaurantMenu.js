@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { ITEM_CATEGORY_LIST } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
+//importing the components
+import RestaurantCategory from "./RestaurantCategory";
+
 //importing the svg's
 import DeliveryTime from "../svg/DeliveryTime";
 import IndianRupeeSymbol from "../svg/IndianRupees";
@@ -40,8 +43,6 @@ const RestaurantMenu = () => {
 	const categories =
 		restroInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
-	// console.log(ITEM_CATEGORY_LIST);
-
 	const itemCategories = categories.filter(
 		(category) => category?.card?.card?.["@type"] === ITEM_CATEGORY_LIST
 	);
@@ -50,6 +51,7 @@ const RestaurantMenu = () => {
 
 	return (
 		<div className="max-w-3xl mx-auto py-4">
+			{/* all the restaurant details */}
 			<div className="flex justify-between mx-4 pb-6 border-dotted border-b-[1px] border-gray-400">
 				<div>
 					<h2 className="text-xl font-bold mb-2">{name}</h2>
@@ -62,12 +64,12 @@ const RestaurantMenu = () => {
 					</div>
 				</div>
 				<div className="border-dotted border-2 border-gray-400 px-2">
-					<p className="font-extrabold py-2 text-sm text-green-600 border-dotted border-b-[1px] border-gray-400 flex items-center">
+					<div className="font-extrabold py-2 text-sm text-green-600 border-dotted border-b-[1px] border-gray-400 flex items-center">
 						<span className="pr-1">
 							<RatingSvg />
 						</span>
-						<p>{avgRating}</p>
-					</p>
+						<div>{avgRating}</div>
+					</div>
 					<p className="text-xs py-2 text-gray-500">{totalRatingsString}</p>
 				</div>
 			</div>
@@ -80,6 +82,12 @@ const RestaurantMenu = () => {
 					<IndianRupeeSymbol />
 					<p className="px-2 text-sm font-bold">{costForTwoMessage}</p>
 				</div>
+			</div>
+			{/* all the restaurant menu details */}
+			<div>
+				{itemCategories.map((category, idx) => (
+					<RestaurantCategory key={idx} data={category?.card?.card} />
+				))}
 			</div>
 		</div>
 	);

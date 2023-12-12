@@ -18,8 +18,8 @@ const RestaurantCategory = ({ data }) => {
 			</div>
 			{/* item list */}
 			<div className="">
-				{itemCards.map((item) => (
-					<ItemList data={item} />
+				{itemCards.map((item, idx) => (
+					<ItemList data={item} key={idx} />
 				))}
 			</div>
 		</div>

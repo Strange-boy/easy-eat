@@ -5,6 +5,7 @@ import ItemList from "./ItemList";
 import DownArrow from "../svg/DownArrow";
 import UpArrow from "../svg/UpArrow";
 
+//this component consists of header and accordion
 const RestaurantCategory = ({ data }) => {
 	const [showItems, setShowItems] = useState(false);
 	// console.log("inside:", data);
@@ -29,13 +30,7 @@ const RestaurantCategory = ({ data }) => {
 				<span>{showItems ? <UpArrow /> : <DownArrow />} </span>
 			</div>
 			{/* item list */}
-			{showItems === true ? (
-				<div className="">
-					{itemCards.map((item, idx) => (
-						<ItemList data={item} key={idx} />
-					))}
-				</div>
-			) : null}
+			{showItems && <ItemList itemCard={data?.itemCards} />}
 		</div>
 	);
 };

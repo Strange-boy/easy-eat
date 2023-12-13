@@ -7,52 +7,53 @@ import IndianRupeeSign from "../svg/IndianRupeeSign";
 //components
 import MenuClassifier from "./MenuClassifier";
 
-const ItemList = ({ data }) => {
-	// console.log("items", data);
-	//details of all the items
-	const {
-		name,
-		description,
-		price,
-		defaultPrice,
-		itemAttribute,
-		showImage,
-		imageId,
-	} = data?.card?.info;
-	// console.log(itemAttribute?.vegClassifier);
-	// console.log(name, data);
-	// console.log(imageId);
+//this component displays all details of particular category
+const ItemList = ({ itemCard }) => {
+	// console.log(itemCard);
 
 	return (
 		// veg icons
-		<div className="my-2 mx-4 pb-4 pt-2 border-b-4 border-gray-100 last:border-b-0 flex justify-between items-center">
-			{/* items details */}
-			<div className="text-sm">
-				<div className="w-5 pb-1">
-					<MenuClassifier dishClass={itemAttribute} />
+		<div>
+			{itemCard.map((item) => (
+				<div
+					key={item?.card?.info?.id}
+					className="my-2 mx-4 pb-4 pt-2 border-b-4 border-gray-100 last:border-b-0 flex justify-between items-center"
+				>
+					{/* details of each unique items */}
+					{/* {console.log("inside each item", item)} */}
+
+					{/* items details */}
+					<div className="text-sm">
+						<div className="w-5 pb-1">
+							<MenuClassifier dishClass={item?.card?.info?.itemAttribute} />
+						</div>
+						<div className="pb-1 font-bold">{item?.card?.info?.name}</div>
+						<div className="flex items-center leading-5 pb-2 text-xs">
+							<span className="pr-1">
+								<IndianRupeeSign />
+							</span>
+							<span>
+								{(item?.card?.info?.price || item?.card?.info?.defaultPrice) /
+									100}
+							</span>{" "}
+						</div>
+						<div className="font-light">{item?.card?.info?.description}</div>
+					</div>
+					{/* item image */}
+					<div className="w-2/12">
+						{item?.card?.info?.imageId !== undefined ? (
+							<img
+								src={CDN_URL + item?.card?.info?.imageId}
+								alt="item-image"
+								className="h-24 w-32 object-cover rounded-xl"
+							/>
+						) : null}
+						<button className="mx-9 py-3 px-4 bg-slate-50 text-xs text-green-700 font-bold leading-3 shadow-lg rounded-md">
+							ADD
+						</button>
+					</div>
 				</div>
-				<div className="pb-1 font-bold">{name}</div>
-				<div className="flex items-center leading-5 pb-2 text-xs">
-					<span className="pr-1">
-						<IndianRupeeSign />
-					</span>
-					<span>{(price || defaultPrice) / 100}</span>{" "}
-				</div>
-				<div className="font-light">{description}</div>
-			</div>
-			{/* item image */}
-			<div className="w-2/12">
-				{imageId !== undefined ? (
-					<img
-						src={CDN_URL + imageId}
-						alt="item-image"
-						className="h-24 w-32 object-cover rounded-xl"
-					/>
-				) : null}
-				<button className="mx-9 py-3 px-4 bg-slate-50 text-xs text-green-700 font-bold leading-3 shadow-lg rounded-md">
-					ADD
-				</button>
-			</div>
+			))}
 		</div>
 	);
 };

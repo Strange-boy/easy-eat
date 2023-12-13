@@ -20,7 +20,7 @@ const ItemList = ({ data }) => {
 		imageId,
 	} = data?.card?.info;
 	// console.log(itemAttribute?.vegClassifier);
-	console.log(name, data);
+	// console.log(name, data);
 	// console.log(imageId);
 
 	return (
@@ -49,7 +49,7 @@ const ItemList = ({ data }) => {
 						className="h-24 w-32 object-cover rounded-xl"
 					/>
 				) : null}
-				<button className="mx-9 py-1 px-3 bg-slate-50 text-sm text-green-700 font-bold leading-3 shadow-lg rounded-md">
+				<button className="mx-9 py-3 px-4 bg-slate-50 text-xs text-green-700 font-bold leading-3 shadow-lg rounded-md">
 					ADD
 				</button>
 			</div>

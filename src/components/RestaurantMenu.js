@@ -34,7 +34,7 @@ const RestaurantMenu = () => {
 		totalRatingsString,
 	} = restroInfo?.data?.cards[0]?.card?.card?.info;
 
-	console.log(restroInfo?.data?.cards[0]?.card?.card?.info);
+	// console.log(restroInfo?.data?.cards[0]?.card?.card?.info);
 
 	const { itemCards } =
 		restroInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
@@ -47,7 +47,7 @@ const RestaurantMenu = () => {
 		(category) => category?.card?.card?.["@type"] === ITEM_CATEGORY_LIST
 	);
 
-	console.log(itemCategories);
+	// console.log(itemCategories);
 
 	return (
 		<div className="max-w-3xl mx-auto py-4">

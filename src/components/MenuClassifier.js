@@ -2,7 +2,7 @@ const MenuClassifier = ({ dishClass }) => {
 	if (dishClass?.vegClassifier === undefined) return <div></div>;
 
 	const { vegClassifier } = dishClass;
-	console.log(vegClassifier);
+	// console.log(vegClassifier);
 
 	return (
 		<div>

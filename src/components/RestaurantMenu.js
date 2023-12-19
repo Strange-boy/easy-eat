@@ -10,13 +10,10 @@ import RestaurantCategory from "./RestaurantCategory";
 import DeliveryTime from "../svg/DeliveryTime";
 import IndianRupeeSymbol from "../svg/IndianRupees";
 import RatingSvg from "../svg/RatingSvg";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
-	// const [restroInfo, setRestroInfo] = useState(null);
-	// const [fullMenu, setFullMenu] = useState(null);
-
-	// //in order to showcase the veg restaurant
-	// const [vegItems, setVegItems] = useState(null);
+	const [expandIndex, setExpandIndex] = useState(null);
 
 	const { id } = useParams();
 
@@ -85,10 +82,14 @@ const RestaurantMenu = () => {
 			</div>
 			{/* all the restaurant menu details */}
 			<div>
-				{itemCategories.map((category, idx) => (
+				{itemCategories.map((category, index) => (
+					//this is a controlled component
 					<RestaurantCategory
 						key={category?.card?.card?.title}
 						data={category?.card?.card}
+						showItems={index === expandIndex ? true : false}
+						setExpandIndex={(index) => setExpandIndex(index)}
+						index={index}
 					/>
 				))}
 			</div>

@@ -6,15 +6,16 @@ import DownArrow from "../svg/DownArrow";
 import UpArrow from "../svg/UpArrow";
 
 //this component consists of header and accordion
-const RestaurantCategory = ({ data }) => {
-	const [showItems, setShowItems] = useState(false);
+const RestaurantCategory = ({ data, showItems, setExpandIndex, index }) => {
+	const [click, setClick] = useState(false);
 	// console.log("inside:", data);
 	const { itemCards } = data;
 
+	//here we are trying to life the state up
 	//in order to handle the click event
 	const handleClick = () => {
-		// console.log("clicked");
-		setShowItems(!showItems);
+		setClick(!click);
+		setExpandIndex(click ? null : index);
 	};
 
 	return (
@@ -29,6 +30,7 @@ const RestaurantCategory = ({ data }) => {
 				</span>
 				<span>{showItems ? <UpArrow /> : <DownArrow />} </span>
 			</div>
+
 			{/* item list */}
 			{showItems && <ItemList itemCard={data?.itemCards} />}
 		</div>

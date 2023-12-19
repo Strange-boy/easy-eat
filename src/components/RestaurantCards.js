@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { CDN_URL } from "../../src/utils/constants";
 
 import RatingSvg from "../svg/RatingSvg";
+// import UserContext from "../utils/UserContext";
 
 //now we would use restaurant cards to call each of the restaurants
 const RestaurantCards = (props) => {
 	// console.log(props);
 	const { resData } = props;
+	// const { loggedInUser } = useContext(UserContext);
 
 	const {
 		cloudinaryImageId,

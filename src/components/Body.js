@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import RestaurantCards, { withBestSellingRestro } from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 //now we would try to create a body component
 const Body = () => {
@@ -113,7 +114,7 @@ const Body = () => {
 							className="mx-auto"
 						>
 							{/* { logic to write the restaurant whether it is a best seller or not} */}
-							{restaurant.info.avgRating > 4 ? (
+							{restaurant.info.avgRating > 4.3 ? (
 								<BestRestaurantCards resData={restaurant} />
 							) : (
 								<RestaurantCards resData={restaurant} />

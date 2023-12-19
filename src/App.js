@@ -1,5 +1,5 @@
 //here we are importing these two statements from the node modules
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,9 +9,9 @@ import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 // import Grocery from "./components/Grocery";
 
-//lazy loading
 //chunky loading
 const Grocery = lazy(() => import("./components/Grocery"));
 
@@ -22,12 +22,23 @@ const About = lazy(() => import("./components/About"));
 
 //we would require a application layout
 const AppLayout = () => {
+	const [username, setUsername] = useState();
+
+	useEffect(() => {
+		const data = {
+			username: "Joel",
+		};
+		setUsername(data.username);
+	});
+
 	return (
-		<div className="app">
-			{/* component composition */}
-			<Header />
-			<Outlet />
-		</div>
+		<UserContext.Provider value={{ loggedInUser: username, setUsername }}>
+			<div className="app">
+				{/* component composition */}
+				<Header />
+				<Outlet />
+			</div>
+		</UserContext.Provider>
 	);
 };
 

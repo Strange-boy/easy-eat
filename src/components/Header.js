@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { LOGO_HEADER } from "../utils/constants";
 import { Link, NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 //we would also require a header component
 export const Header = () => {
 	const onlineStatus = useOnlineStatus();
+	const { loggedInUser } = useContext(UserContext);
+	// console.log(loggedInUser);
 
 	return (
 		<div className="flex justify-between m-3 shadow-md">
@@ -51,12 +54,20 @@ export const Header = () => {
 							Grocery
 						</NavLink>
 					</li>
-					<li className="">
+					<li>
 						<NavLink
 							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
 							to="/"
 						>
 							Cart
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							className="mx-1 px-2 text-lg text-gray-600 font-bold hover:text-gray-950 "
+							to="/"
+						>
+							{loggedInUser}
 						</NavLink>
 					</li>
 				</ul>

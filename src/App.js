@@ -10,6 +10,10 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+
+//it acts as a bridge betweeen react and redux
+import { Provider } from "react-redux";
+import appStore from "./utils/redux-files/appStore";
 // import Grocery from "./components/Grocery";
 
 //chunky loading
@@ -32,13 +36,15 @@ const AppLayout = () => {
 	});
 
 	return (
-		<UserContext.Provider value={{ loggedInUser: username, setUsername }}>
-			<div className="app">
-				{/* component composition */}
-				<Header />
-				<Outlet />
-			</div>
-		</UserContext.Provider>
+		<Provider store={appStore}>
+			<UserContext.Provider value={{ loggedInUser: username, setUsername }}>
+				<div className="app">
+					{/* component composition */}
+					<Header />
+					<Outlet />
+				</div>
+			</UserContext.Provider>
+		</Provider>
 	);
 };
 

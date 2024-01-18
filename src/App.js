@@ -39,7 +39,6 @@ const AppLayout = () => {
 		<Provider store={appStore}>
 			<UserContext.Provider value={{ loggedInUser: username, setUsername }}>
 				<div className="app">
-					{/* component composition */}
 					<Header />
 					<Outlet />
 				</div>

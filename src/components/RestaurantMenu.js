@@ -47,53 +47,55 @@ const RestaurantMenu = () => {
 	// console.log(itemCategories);
 
 	return (
-		<div className="max-w-3xl mx-auto py-4">
-			{/* all the restaurant details */}
-			<div className="flex justify-between mx-4 pb-6 border-dotted border-b-[1px] border-gray-400">
+		<>
+			<div className="max-w-3xl mx-auto py-4">
+				{/* all the restaurant details */}
+				<div className="flex justify-between mx-4 pb-6 border-dotted border-b-[1px] border-gray-400">
+					<div>
+						<h2 className="text-xl font-bold mb-2">{name}</h2>
+						<h4 className="text-sm font-normal text-gray-600 mb-1">
+							{cuisines.join(", ")}
+						</h4>
+						<div className="text-sm font-normal text-gray-600">
+							<span>{areaName}, </span>
+							<span>{sla?.lastMileTravel}</span>
+						</div>
+					</div>
+					<div className="border-dotted border-2 border-gray-400 px-2">
+						<div className="font-extrabold py-2 text-sm text-green-600 border-dotted border-b-[1px] border-gray-400 flex items-center">
+							<span className="pr-1">
+								<RatingSvg />
+							</span>
+							<div>{avgRating}</div>
+						</div>
+						<p className="text-xs py-2 text-gray-500">{totalRatingsString}</p>
+					</div>
+				</div>
+				<div className="my-4 mx-4 pb-4 flex items-center border-dotted border-b-[1px] border-gray-400">
+					<div className="pr-4 flex items-center">
+						<DeliveryTime />
+						<p className="px-2 text-sm font-bold">{sla?.deliveryTime} mins</p>
+					</div>
+					<div className="flex items-center">
+						<IndianRupeeSymbol />
+						<p className="px-2 text-sm font-bold">{costForTwoMessage}</p>
+					</div>
+				</div>
+				{/* all the restaurant menu details */}
 				<div>
-					<h2 className="text-xl font-bold mb-2">{name}</h2>
-					<h4 className="text-sm font-normal text-gray-600 mb-1">
-						{cuisines.join(", ")}
-					</h4>
-					<div className="text-sm font-normal text-gray-600">
-						<span>{areaName}, </span>
-						<span>{sla?.lastMileTravel}</span>
-					</div>
-				</div>
-				<div className="border-dotted border-2 border-gray-400 px-2">
-					<div className="font-extrabold py-2 text-sm text-green-600 border-dotted border-b-[1px] border-gray-400 flex items-center">
-						<span className="pr-1">
-							<RatingSvg />
-						</span>
-						<div>{avgRating}</div>
-					</div>
-					<p className="text-xs py-2 text-gray-500">{totalRatingsString}</p>
+					{itemCategories.map((category, index) => (
+						//this is a controlled component
+						<RestaurantCategory
+							key={category?.card?.card?.title}
+							data={category?.card?.card}
+							showItems={index === expandIndex ? true : false}
+							setExpandIndex={(index) => setExpandIndex(index)}
+							index={index}
+						/>
+					))}
 				</div>
 			</div>
-			<div className="my-4 mx-4 pb-4 flex items-center border-dotted border-b-[1px] border-gray-400">
-				<div className="pr-4 flex items-center">
-					<DeliveryTime />
-					<p className="px-2 text-sm font-bold">{sla?.deliveryTime} mins</p>
-				</div>
-				<div className="flex items-center">
-					<IndianRupeeSymbol />
-					<p className="px-2 text-sm font-bold">{costForTwoMessage}</p>
-				</div>
-			</div>
-			{/* all the restaurant menu details */}
-			<div>
-				{itemCategories.map((category, index) => (
-					//this is a controlled component
-					<RestaurantCategory
-						key={category?.card?.card?.title}
-						data={category?.card?.card}
-						showItems={index === expandIndex ? true : false}
-						setExpandIndex={(index) => setExpandIndex(index)}
-						index={index}
-					/>
-				))}
-			</div>
-		</div>
+		</>
 	);
 };
 

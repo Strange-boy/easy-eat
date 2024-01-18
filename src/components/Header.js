@@ -3,12 +3,17 @@ import { LOGO_HEADER } from "../utils/constants";
 import { Link, NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 //we would also require a header component
 export const Header = () => {
 	const onlineStatus = useOnlineStatus();
 	const { loggedInUser } = useContext(UserContext);
 	// console.log(loggedInUser);
+
+	//we can use the selector to subscribe to the store
+	const cartItems = useSelector((store) => store.cart.item);
+	console.log(cartItems);
 
 	return (
 		<div className="flex justify-between m-3 shadow-md">
@@ -24,7 +29,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950  underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950  "
 							to="/"
 						>
 							Home
@@ -32,7 +37,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
 							to="/about"
 						>
 							About us
@@ -40,7 +45,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
 							to="/contact"
 						>
 							Contact us
@@ -48,7 +53,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 underline-offset-4 hover:underline hover:underline-offset-1 transition-all duration-300 ease-in-out"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
 							to="/grocery"
 						>
 							Grocery
@@ -59,7 +64,7 @@ export const Header = () => {
 							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
 							to="/"
 						>
-							Cart
+							Cart - ({cartItems.length} items)
 						</NavLink>
 					</li>
 					<li>

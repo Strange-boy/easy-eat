@@ -9,8 +9,6 @@ import MenuClassifier from "./MenuClassifier";
 
 //this component displays all details of particular category
 const ItemList = ({ itemCard }) => {
-	// console.log(itemCard);
-
 	return (
 		// veg icons
 		<div>
@@ -48,7 +46,12 @@ const ItemList = ({ itemCard }) => {
 								className="h-24 w-32 object-cover rounded-xl"
 							/>
 						) : null}
-						<button className="mx-9 py-3 px-4 bg-slate-50 text-xs text-green-700 font-bold leading-3 shadow-lg rounded-md">
+						<button
+							className="mx-9 py-3 px-4 bg-slate-50 text-xs text-green-700 font-bold leading-3 shadow-lg rounded-md"
+							onClick={() => {
+								notify();
+							}}
+						>
 							ADD
 						</button>
 					</div>

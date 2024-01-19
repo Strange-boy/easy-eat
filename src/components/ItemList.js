@@ -7,8 +7,19 @@ import IndianRupeeSign from "../svg/IndianRupeeSign";
 //components
 import MenuClassifier from "./MenuClassifier";
 
+//redux imports
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/redux-files/cartSlice";
+
 //this component displays all details of particular category
 const ItemList = ({ itemCard }) => {
+	const dispatch = useDispatch();
+
+	//in order to handle the add items
+	const handleAdditems = (item) => {
+		dispatch(addItem(item));
+	};
+
 	return (
 		// veg icons
 		<div>
@@ -49,7 +60,7 @@ const ItemList = ({ itemCard }) => {
 						<button
 							className="mx-9 py-3 px-4 bg-slate-50 text-xs text-green-700 font-bold leading-3 shadow-lg rounded-md"
 							onClick={() => {
-								notify();
+								handleAdditems(item);
 							}}
 						>
 							ADD

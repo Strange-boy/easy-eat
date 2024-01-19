@@ -62,7 +62,7 @@ export const Header = () => {
 					<li>
 						<NavLink
 							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950"
-							to="/"
+							to="/cart"
 						>
 							Cart - ({cartItems.length} items)
 						</NavLink>

@@ -7,14 +7,20 @@ import IndianRupeeSign from "../svg/IndianRupeeSign";
 //url
 import { CDN_URL } from "../utils/constants";
 
+//redux based commands
+import { useDispatch } from "react-redux";
+import { removeItem } from "../utils/redux-files/cartSlice";
+
 const CartItemCard = ({ item }) => {
 	const [quantity, setQuantity] = useState(1);
 	const [cost, setCost] = useState(
 		(item?.card?.info?.price || item?.card?.info?.defaultPrice) / 100
 	);
 
+	const dispatch = useDispatch();
+
 	//we can destructure a lot of items here
-	const { name, itemAttribute, price, defaultPrice, imageId } =
+	const { id, name, itemAttribute, price, defaultPrice, imageId } =
 		item?.card?.info;
 
 	//in order to components that are added
@@ -27,6 +33,11 @@ const CartItemCard = ({ item }) => {
 	};
 
 	const handleDecreaseCount = () => {
+		if (quantity === 1) {
+			console.log("entered inside decrease");
+			dispatch(removeItem(id));
+		}
+
 		setQuantity(quantity - 1);
 		setCost(cost - (price || defaultPrice) / 100);
 	};

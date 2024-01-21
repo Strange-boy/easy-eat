@@ -9,7 +9,7 @@ import CloseItem from "../../svg/CloseItem";
 import { CDN_URL } from "../../utils/constants";
 
 //redux based commands
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
 	increaseAmount,
 	decreaseAmount,
@@ -25,10 +25,6 @@ const CartItemCard = ({ item }) => {
 	//in order to dispatch an action
 	const dispatch = useDispatch();
 
-	//in order to subscribe to the store
-	const totalCost = useSelector((cost) => cost.cart.totalCost);
-	console.log("Total Cost" + totalCost);
-
 	//we can destructure a lot of items here
 	const { id, name, itemAttribute, price, defaultPrice, imageId } =
 		item?.card?.info;
@@ -43,13 +39,11 @@ const CartItemCard = ({ item }) => {
 		setQuantity(quantity + 1);
 		setCost(cost + itemCost);
 		dispatch(increaseAmount(itemCost));
-		console.log("current amount incr:", totalCost);
 	};
 
 	//when the quanity of content decreases
 	const handleDecreaseCount = () => {
 		if (quantity === 1) {
-			console.log("entered inside decrease");
 			dispatch(decreaseAmount(itemCost));
 			dispatch(removeItem(id));
 			return;
@@ -58,7 +52,6 @@ const CartItemCard = ({ item }) => {
 		setQuantity(quantity - 1);
 		setCost(cost - itemCost);
 		dispatch(decreaseAmount(itemCost));
-		console.log("current amount decr:", totalCost);
 	};
 
 	//in order to handle when the cross button is closed
@@ -89,7 +82,7 @@ const CartItemCard = ({ item }) => {
 					<span className="pr-1">
 						<IndianRupeeSign />
 					</span>
-					<span>{cost}</span>{" "}
+					<span>{cost.toFixed(2)}</span>{" "}
 				</div>
 			</div>
 			{/* item image */}

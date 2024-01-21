@@ -1,13 +1,15 @@
 import { useSelector } from "react-redux";
 
 const OrderSummary = () => {
-	const currentAmount = useSelector((amount) => amount.cart.totalCost);
+	const calcAmount = useSelector((amount) => amount.cart.totalCost);
+	const currentAmount = calcAmount.toFixed(2);
 	const deliveryPartner = 10;
-	const gstAmount = currentAmount * (5 / 100);
+	const gstAmount = currentAmount * (5 / 100); //calculating 5% gst for restro's
+	const roundedGstAmount = gstAmount.toFixed(2);
 	const platformFees = 3;
 
-	const totalAmount =
-		currentAmount + deliveryPartner + gstAmount + platformFees;
+	let totalAmount = calcAmount + deliveryPartner + gstAmount + platformFees;
+	totalAmount = totalAmount.toFixed(2);
 
 	return (
 		<div className="w-2/5 m-4 border-2 rounded-lg h-[26rem] sticky top-8">
@@ -35,7 +37,7 @@ const OrderSummary = () => {
 					</div>
 					<div className="leading-6 flex-col w-2/12">
 						<p>₹ {platformFees}</p>
-						<p>₹ {gstAmount}</p>
+						<p>₹ {roundedGstAmount}</p>
 					</div>
 				</div>
 			</div>

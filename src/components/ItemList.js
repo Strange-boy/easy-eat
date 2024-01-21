@@ -9,7 +9,7 @@ import MenuClassifier from "./MenuClassifier";
 
 //redux imports
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/redux-files/cartSlice";
+import { addItem, increaseAmount } from "../utils/redux-files/cartSlice";
 
 //this component displays all details of particular category
 const ItemList = ({ itemCard }) => {
@@ -18,6 +18,11 @@ const ItemList = ({ itemCard }) => {
 	//in order to handle the add items
 	const handleAdditems = (item) => {
 		dispatch(addItem(item));
+		dispatch(
+			increaseAmount(
+				(item?.card?.info?.price || item?.card?.info?.defaultPrice) / 100
+			)
+		);
 	};
 
 	return (

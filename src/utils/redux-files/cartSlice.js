@@ -7,6 +7,7 @@ const cartSlice = createSlice({
 		totalCost: 0,
 	},
 	reducers: {
+		//actions related adding the cart item
 		addItem: (state, action) => {
 			state.item.push(action.payload);
 		},
@@ -20,13 +21,26 @@ const cartSlice = createSlice({
 		clearCart: (state) => {
 			state.item.length = 0;
 		},
-		calculateTotalAmount: (state, action) => {
+		//actions related to calculating the amount
+		increaseAmount: (state, action) => {
 			state.totalCost += action.payload;
+		},
+		decreaseAmount: (state, action) => {
+			state.totalCost -= action.payload;
+		},
+		clearAmount: (state) => {
+			state.totalCost = 0;
 		},
 	},
 });
 
-export const { addItem, removeItem, clearCart, calculateTotalAmount } =
-	cartSlice.actions;
+export const {
+	addItem,
+	removeItem,
+	clearCart,
+	increaseAmount,
+	decreaseAmount,
+	clearAmount,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

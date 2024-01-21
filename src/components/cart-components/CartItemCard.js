@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuClassifier from "../MenuClassifier";
 
 //svg
@@ -9,9 +9,10 @@ import CloseItem from "../../svg/CloseItem";
 import { CDN_URL } from "../../utils/constants";
 
 //redux based commands
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
-	calculateTotalAmount,
+	increaseAmount,
+	decreaseAmount,
 	removeItem,
 } from "../../utils/redux-files/cartSlice";
 
@@ -20,7 +21,13 @@ const CartItemCard = ({ item }) => {
 	const [cost, setCost] = useState(
 		(item?.card?.info?.price || item?.card?.info?.defaultPrice) / 100
 	);
+
+	//in order to dispatch an action
 	const dispatch = useDispatch();
+
+	//in order to subscribe to the store
+	const totalCost = useSelector((cost) => cost.cart.totalCost);
+	console.log("Total Cost" + totalCost);
 
 	//we can destructure a lot of items here
 	const { id, name, itemAttribute, price, defaultPrice, imageId } =
@@ -35,24 +42,28 @@ const CartItemCard = ({ item }) => {
 	const handleIncreaseCount = () => {
 		setQuantity(quantity + 1);
 		setCost(cost + itemCost);
-		// dispatch(calculateTotalAmount(itemCost));
+		dispatch(increaseAmount(itemCost));
+		console.log("current amount incr:", totalCost);
 	};
 
 	//when the quanity of content decreases
 	const handleDecreaseCount = () => {
 		if (quantity === 1) {
 			console.log("entered inside decrease");
-			// dispatch(calculateTotalAmount(itemCost));
+			dispatch(decreaseAmount(itemCost));
 			dispatch(removeItem(id));
+			return;
 		}
 
 		setQuantity(quantity - 1);
 		setCost(cost - itemCost);
-		// dispatch(calculateTotalAmount(itemCost));
+		dispatch(decreaseAmount(itemCost));
+		console.log("current amount decr:", totalCost);
 	};
 
 	//in order to handle when the cross button is closed
 	const handleRemoveItem = () => {
+		dispatch(decreaseAmount(itemCost));
 		dispatch(removeItem(id));
 	};
 

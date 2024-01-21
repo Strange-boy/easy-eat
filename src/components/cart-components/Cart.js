@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../utils/redux-files/cartSlice";
+import { clearCart, clearAmount } from "../../utils/redux-files/cartSlice";
 import CartItemCard from "./CartItemCard";
 import OrderSummary from "./OrderSummary";
 
@@ -12,7 +12,8 @@ const Cart = () => {
 
 	//in order to clear the cart items
 	const handleClearCart = () => {
-		dispatch(clearCart(cartItems));
+		dispatch(clearAmount()); //in order to clear all the tabs
+		dispatch(clearCart(cartItems)); //in order to remove all the items
 	};
 
 	return (

@@ -63,7 +63,7 @@ const CartItemCard = ({ item }) => {
 
 	//in order to handle when the cross button is closed
 	const handleRemoveItem = () => {
-		dispatch(decreaseAmount(itemCost));
+		dispatch(decreaseAmount(cost));
 		dispatch(removeItem(id));
 	};
 

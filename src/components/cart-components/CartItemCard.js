@@ -1,27 +1,32 @@
 import { useState } from "react";
-import MenuClassifier from "./MenuClassifier";
+import MenuClassifier from "../MenuClassifier";
 
 //svg
-import IndianRupeeSign from "../svg/IndianRupeeSign";
+import IndianRupeeSign from "../../svg/IndianRupeeSign";
+import CloseItem from "../../svg/CloseItem";
 
 //url
-import { CDN_URL } from "../utils/constants";
+import { CDN_URL } from "../../utils/constants";
 
 //redux based commands
 import { useDispatch } from "react-redux";
-import { removeItem } from "../utils/redux-files/cartSlice";
+import {
+	calculateTotalAmount,
+	removeItem,
+} from "../../utils/redux-files/cartSlice";
 
 const CartItemCard = ({ item }) => {
 	const [quantity, setQuantity] = useState(1);
 	const [cost, setCost] = useState(
 		(item?.card?.info?.price || item?.card?.info?.defaultPrice) / 100
 	);
-
 	const dispatch = useDispatch();
 
 	//we can destructure a lot of items here
 	const { id, name, itemAttribute, price, defaultPrice, imageId } =
 		item?.card?.info;
+
+	const itemCost = (defaultPrice || price) / 100;
 
 	//in order to components that are added
 	console.log(item);
@@ -29,17 +34,26 @@ const CartItemCard = ({ item }) => {
 	//in order to count of items
 	const handleIncreaseCount = () => {
 		setQuantity(quantity + 1);
-		setCost(cost + (price || defaultPrice) / 100);
+		setCost(cost + itemCost);
+		// dispatch(calculateTotalAmount(itemCost));
 	};
 
+	//when the quanity of content decreases
 	const handleDecreaseCount = () => {
 		if (quantity === 1) {
 			console.log("entered inside decrease");
+			// dispatch(calculateTotalAmount(itemCost));
 			dispatch(removeItem(id));
 		}
 
 		setQuantity(quantity - 1);
-		setCost(cost - (price || defaultPrice) / 100);
+		setCost(cost - itemCost);
+		// dispatch(calculateTotalAmount(itemCost));
+	};
+
+	//in order to handle when the cross button is closed
+	const handleRemoveItem = () => {
+		dispatch(removeItem(id));
 	};
 
 	return (
@@ -68,31 +82,41 @@ const CartItemCard = ({ item }) => {
 				</div>
 			</div>
 			{/* item image */}
-			<div className="w-2/12">
-				<div className="flex justify-center">
-					{imageId !== undefined ? (
-						<img
-							src={CDN_URL + imageId}
-							alt="item-image"
-							className="h-24 w-32 object-cover rounded-xl"
-						/>
-					) : null}
+			<div className="w-3/12 flex">
+				<div className="w-2/3">
+					<div className="flex justify-center">
+						{imageId !== undefined ? (
+							<img
+								src={CDN_URL + imageId}
+								alt="item-image"
+								className="h-24 w-32 object-cover rounded-xl"
+							/>
+						) : null}
+					</div>
+					<div className="flex justify-center align-middle p-2">
+						<button
+							className="mx-2 py-3 px-4 bg-slate-50 text-base text-green-700 font-bold leading-3 shadow-lg rounded-md"
+							onClick={handleDecreaseCount}
+						>
+							-
+						</button>
+						<p className="py-2 text-base text-green-700 font-bold leading-3">
+							{quantity}
+						</p>
+						<button
+							className="mx-2 py-2 px-4 bg-slate-50 text-base text-green-700 font-bold leading-3 shadow-lg rounded-md"
+							onClick={handleIncreaseCount}
+						>
+							+
+						</button>
+					</div>
 				</div>
-				<div className="flex justify-center align-middle p-2">
+				<div className="w-1/3 flex m-2 justify-center items-center">
 					<button
-						className="mx-2 py-3 px-4 bg-slate-50 text-base text-green-700 font-bold leading-3 shadow-lg rounded-md"
-						onClick={handleDecreaseCount}
+						className="text-slate-700 hover:shadow-sm hover:shadow-slate-600/50"
+						onClick={handleRemoveItem}
 					>
-						-
-					</button>
-					<p className="py-2 text-base text-green-700 font-bold leading-3">
-						{quantity}
-					</p>
-					<button
-						className="mx-2 py-2 px-4 bg-slate-50 text-base text-green-700 font-bold leading-3 shadow-lg rounded-md"
-						onClick={handleIncreaseCount}
-					>
-						+
+						<CloseItem />
 					</button>
 				</div>
 			</div>

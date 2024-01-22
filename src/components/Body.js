@@ -53,12 +53,12 @@ const Body = () => {
 	//in order to display the online status
 	const onlineStatus = useOnlineStatus();
 
-	if (onlineStatus === false)
-		return (
-			<div className="flex justify-center mx-auto">
-				Please check your internet connection !!
-			</div>
-		);
+	// if (onlineStatus === false)
+	// 	return (
+	// 		<div className="flex justify-center mx-auto">
+	// 			Please check your internet connection !!
+	// 		</div>
+	// 	);
 
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (

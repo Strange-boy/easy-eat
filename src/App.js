@@ -16,6 +16,7 @@ import UserContext from "./utils/UserContext";
 //it acts as a bridge betweeen react and redux
 import { Provider } from "react-redux";
 import appStore from "./utils/redux-files/appStore";
+import Footer from "./components/Footer";
 
 // import Grocery from "./components/Grocery";
 
@@ -44,6 +45,7 @@ const AppLayout = () => {
 				<div className="app">
 					<Header />
 					<Outlet />
+					<Footer />
 				</div>
 			</UserContext.Provider>
 		</Provider>

@@ -18,7 +18,7 @@ const Cart = () => {
 	};
 
 	return (
-		<>
+		<div className="h-screen">
 			{cartItems.length === 0 ? (
 				<EmptyCart />
 			) : (
@@ -37,7 +37,7 @@ const Cart = () => {
 								Clear Cart
 							</button>
 						</div>
-						<div className="p-2 m-2 last:border-slate-300 last:border-b-4">
+						<div className="p-2 m-2 last:border-slate-200 last:border-b-4">
 							{/* In order to display the content of the shopping cart */}
 							{cartItems.map((item) => (
 								<CartItemCard key={item?.card?.info?.name} item={item} />
@@ -47,7 +47,7 @@ const Cart = () => {
 					<OrderSummary />
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

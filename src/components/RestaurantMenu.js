@@ -48,7 +48,7 @@ const RestaurantMenu = () => {
 
 	return (
 		<>
-			<div className="max-w-3xl mx-auto py-4">
+			<div className="max-w-3xl mx-auto py-4 min-h-screen">
 				{/* all the restaurant details */}
 				<div className="flex justify-between mx-4 pb-6 border-dotted border-b-[1px] border-gray-400">
 					<div>

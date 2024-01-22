@@ -54,7 +54,11 @@ const Body = () => {
 	const onlineStatus = useOnlineStatus();
 
 	if (onlineStatus === false)
-		return <h1>OOps!! Seems like you went offline XD</h1>;
+		return (
+			<div className="flex justify-center mx-auto">
+				Please check your internet connection !!
+			</div>
+		);
 
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (

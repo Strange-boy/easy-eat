@@ -6,7 +6,7 @@ const EmptyCart = () => {
 	return (
 		<>
 			<div className="flex justify-center mt-20">
-				<img src={shoppingCart} alt="shopping cart" className="w-80" />
+				<img src={shoppingCart} alt="shopping cart" className="w-96" />
 			</div>
 			<p className="flex justify-center text-xl font-semibold">
 				Let's go shopping !!

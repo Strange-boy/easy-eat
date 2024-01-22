@@ -12,7 +12,7 @@ const OrderSummary = () => {
 	totalAmount = totalAmount.toFixed(2);
 
 	return (
-		<div className="w-2/5 m-4 border-2 rounded-lg h-[26rem] sticky top-32">
+		<div className="w-2/5 m-4 border-2 rounded-lg h-[29rem] sticky top-32">
 			<div className="p-2 m-2 pb-4 border-solid border-b-2 border-gray-400">
 				<p className="text-xl font-bold">Order summary</p>
 			</div>
@@ -23,7 +23,7 @@ const OrderSummary = () => {
 						<p>Item total</p>
 						<p>Delivery partner fee</p>
 					</div>
-					<div className="leading-6 flex-col justify-start w-2/12">
+					<div className="leading-6 flex-col justify-start w-3/12">
 						<p>₹ {currentAmount}</p>
 						<p>₹ {deliveryPartner}</p>
 					</div>
@@ -35,7 +35,7 @@ const OrderSummary = () => {
 						<p>Platform fees</p>
 						<p>GST Charges</p>
 					</div>
-					<div className="leading-6 flex-col w-2/12">
+					<div className="leading-6 flex-col w-3/12">
 						<p>₹ {platformFees}</p>
 						<p>₹ {roundedGstAmount}</p>
 					</div>
@@ -44,7 +44,7 @@ const OrderSummary = () => {
 			<div className="px-2 pt-2 pb-4 mx-2 border-b-4 border-slate-700">
 				<div className="flex justify-between text-lg font-bold">
 					<p>Total</p>
-					<p className="w-2/12">₹ {totalAmount}</p>
+					<p className="w-3/12">₹ {totalAmount}</p>
 				</div>
 			</div>
 			<div className="mt-6 flex justify-center">

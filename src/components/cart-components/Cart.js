@@ -22,9 +22,9 @@ const Cart = () => {
 			{cartItems.length === 0 ? (
 				<EmptyCart />
 			) : (
-				<div className="max-w-7xl mx-auto py-4 flex relative">
+				<div className="md:max-w-7xl mx-auto py-4 grid grid-cols-1 md:flex relative">
 					{/* In case the cart is empty we would try to render a photo */}
-					<div className="w-3/5 mr-1">
+					<div className="w-3/5 mr-1 ">
 						{/* heading of the shopping cart */}
 						<div className="flex justify-between align-middle p-2 m-2 pb-4 border-dotted border-b-[1px] border-gray-400">
 							<p className="text-xl font-semibold">
@@ -37,7 +37,7 @@ const Cart = () => {
 								Clear Cart
 							</button>
 						</div>
-						<div className="p-2 m-2">
+						<div className="p-2 m-2 last:border-slate-300 last:border-b-4">
 							{/* In order to display the content of the shopping cart */}
 							{cartItems.map((item) => (
 								<CartItemCard key={item?.card?.info?.name} item={item} />

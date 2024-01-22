@@ -12,7 +12,7 @@ const OrderSummary = () => {
 	totalAmount = totalAmount.toFixed(2);
 
 	return (
-		<div className="w-2/5 m-4 border-2 rounded-lg h-[26rem] sticky top-8">
+		<div className="w-2/5 m-4 border-2 rounded-lg h-[26rem] sticky top-32">
 			<div className="p-2 m-2 pb-4 border-solid border-b-2 border-gray-400">
 				<p className="text-xl font-bold">Order summary</p>
 			</div>

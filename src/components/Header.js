@@ -16,10 +16,14 @@ export const Header = () => {
 	console.log(cartItems);
 
 	return (
-		<div className="flex justify-between m-3 shadow-md">
+		<div className="flex z-30 bg-slate-50 justify-between mx-2 my-4 rounded-md shadow-sm sticky top-0">
 			<div className="m-2">
 				<Link to="/">
-					<img className="w-24" src={LOGO_HEADER} alt="restaurant logo" />
+					<img
+						className="w-20 hover:scale-110 hover:ease-in-out duration-500"
+						src={LOGO_HEADER}
+						alt="restaurant logo"
+					/>
 				</Link>
 			</div>
 			<div className="flex items-center text-xl font-bold">

@@ -19,7 +19,7 @@ export const Header = () => {
 	console.log(cartItems);
 
 	return (
-		<div className="flex z-30 bg-slate-50 justify-between  mx-2 my-4 rounded-md shadow-sm sticky top-0">
+		<div className="flex z-30 bg-slate-50 justify-between  mx-2 my-4 rounded-md shadow-md shadow-slate-50/50 sticky top-0">
 			<div className="m-2">
 				<Link to="/">
 					<img

@@ -32,6 +32,7 @@ const Body = () => {
 		// );
 
 		const liveRestaurant = jsonData?.data?.cards;
+		// console.log(liveRestaurant);
 
 		liveRestaurant.forEach((restaurant) => {
 			if (restaurant.card.card.id === "restaurant_grid_listing") {
@@ -98,7 +99,7 @@ const Body = () => {
 					onClick={() => {
 						// console.log("Before items", listOfRestaurant);
 						const topRestaurant = listOfRestaurant.filter((rest) => {
-							return rest.info.avgRating >= 4;
+							return rest.info.avgRating >= 4.5;
 						});
 
 						// console.log(topRestaurant);

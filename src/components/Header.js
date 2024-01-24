@@ -36,7 +36,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950  "
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 hover:border-b-4 hover:border-gray-950 "
 							to="/"
 						>
 							Home
@@ -68,7 +68,7 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 relative"
+							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 relative hover:border-b-4 hover:border-gray-950"
 							to="/cart"
 						>
 							<span className="inline-block mt-1 w-8">

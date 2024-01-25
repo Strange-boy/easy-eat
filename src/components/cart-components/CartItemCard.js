@@ -11,6 +11,7 @@ import { CDN_URL } from "../../utils/constants";
 //redux based commands
 import { useDispatch } from "react-redux";
 import {
+	addItem,
 	increaseAmount,
 	decreaseAmount,
 	removeItem,
@@ -18,6 +19,8 @@ import {
 
 //in order to import the toast component
 import { useToast } from "../ui/use-toast";
+import { ToastAction } from "../ui/toast";
+import { Button } from "../ui/button";
 
 const CartItemCard = ({ item }) => {
 	const [quantity, setQuantity] = useState(1);
@@ -39,6 +42,14 @@ const CartItemCard = ({ item }) => {
 
 	//in order to components that are added
 	console.log(item);
+
+	//in order to add the items to the cart
+	const handleAddItem = () => {
+		dispatch(addItem(item));
+		toast({
+			description: `${name} added back 🛒`,
+		});
+	};
 
 	//in order to count of items
 	const handleIncreaseCount = () => {
@@ -64,6 +75,16 @@ const CartItemCard = ({ item }) => {
 	const handleRemoveItem = () => {
 		dispatch(decreaseAmount(cost));
 		dispatch(removeItem(id));
+
+		toast({
+			title: `${name} removed`,
+			description: "Don't worry, we won't judge if you change your mind 😉",
+			action: (
+				<Button onClick={handleAddItem} className="text-sm">
+					Undo
+				</Button>
+			),
+		});
 	};
 
 	return (

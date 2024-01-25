@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 
 //in order to import the svg components
 import CartIcon from "../svg/CartIcon";
+import UserIcon from "../svg/UserIcon";
+import SearchIcon from "../svg/SearchIcon";
 
 //we would also require a header component
 export const Header = () => {
@@ -36,30 +38,6 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 hover:border-b-4 hover:border-gray-950 "
-							to="/"
-						>
-							Home
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
-							to="/about"
-						>
-							About us
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
-							to="/contact"
-						>
-							Contact us
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
 							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
 							to="/grocery"
 						>
@@ -68,23 +46,40 @@ export const Header = () => {
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 relative hover:border-b-4 hover:border-gray-950"
-							to="/cart"
+							className="mx-1 px-2 text-lg text-gray-600 flex items-center gap-1 pb-1 font-bold hover:text-gray-950 hover:border-b-2 hover:border-gray-950"
+							to="/search"
 						>
-							<span className="inline-block mt-1 w-8">
-								<CartIcon />
-							</span>
-							<span className="absolute right-2 bg-slate-600 text-white text-xs rounded-full font-semibold px-1">
-								{cartItems.length}
-							</span>
+							<div className="inline-block mt-1">
+								<SearchIcon />
+							</div>
+							<div className="mt-1">Search</div>
 						</NavLink>
 					</li>
 					<li>
 						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 font-bold hover:text-gray-950 "
-							to="/"
+							className="mx-1 px-2 text-lg text-gray-600 flex items-center hover:text-gray-950  hover:border-b-2 hover:border-gray-950"
+							to="/cart"
 						>
-							{loggedInUser}
+							<div className="relative">
+								<span className="inline-block mt-1 w-8">
+									<CartIcon />
+								</span>
+								<span className="absolute right-2 bg-slate-600 text-white text-xs rounded-full font-semibold px-1">
+									{cartItems.length}
+								</span>
+							</div>
+							<div className="text-lg font-semibold">Cart</div>
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							className="mx-1 px-2 text-lg text-gray-600 flex items-center gap-1 font-bold hover:text-gray-950 "
+							to=""
+						>
+							<div className="inline-block mt-1">
+								<UserIcon />
+							</div>
+							<div className="mt-1">{loggedInUser}</div>
 						</NavLink>
 					</li>
 				</ul>

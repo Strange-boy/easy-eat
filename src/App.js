@@ -3,9 +3,9 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
+import SearchBar from "./components/SearchBar";
 
 // import About from "./components/About";
-import Contact from "./components/Contact";
 import Cart from "./components/cart-components/Cart";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -25,11 +25,6 @@ import Footer from "./components/Footer";
 
 //chunky loading
 const Grocery = lazy(() => import("./components/Grocery"));
-
-//lets try using lazy loading for about us page
-const About = lazy(() => import("./components/About"));
-
-//here we need to create the components for the restaurant application
 
 //we would require a application layout
 const AppLayout = () => {
@@ -65,16 +60,8 @@ const appRouter = createBrowserRouter([
 				element: <Body />,
 			},
 			{
-				path: "/about",
-				element: (
-					<Suspense fallback={<h1>Loading...</h1>}>
-						<About />
-					</Suspense>
-				),
-			},
-			{
-				path: "/contact",
-				element: <Contact />,
+				path: "/search",
+				element: <SearchBar />,
 			},
 			{
 				path: "/cart",

@@ -4,6 +4,9 @@ import CartItemCard from "./CartItemCard";
 import OrderSummary from "./OrderSummary";
 import EmptyCart from "./EmptyCart";
 
+//in order to import components from shadcn
+import { Button } from "../ui/button";
+
 const Cart = () => {
 	//here we need to subscribe to the store to show the total items present in the cart
 	const cartItems = useSelector((store) => store.cart.item);
@@ -18,7 +21,7 @@ const Cart = () => {
 	};
 
 	return (
-		<div className="h-screen">
+		<div className="min-h-screen">
 			{cartItems.length === 0 ? (
 				<EmptyCart />
 			) : (
@@ -30,14 +33,11 @@ const Cart = () => {
 							<p className="text-xl font-semibold">
 								Shopping Cart ({cartItems.length} items)
 							</p>
-							<button
-								className="bg-slate-900 text-slate-100 p-2 rounded-lg font-semibold"
-								onClick={handleClearCart}
-							>
+							<Button className="font-bold text-base" onClick={handleClearCart}>
 								Clear Cart
-							</button>
+							</Button>
 						</div>
-						<div className="p-2 m-2 last:border-slate-200 last:border-b-4">
+						<div className="p-2 m-2 last:border-slate-200 last:border-b-4 ">
 							{/* In order to display the content of the shopping cart */}
 							{cartItems.map((item) => (
 								<CartItemCard key={item?.card?.info?.name} item={item} />

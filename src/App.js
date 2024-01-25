@@ -13,6 +13,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 
+//in order to import toaster
+import { Toaster } from "./components/ui/toaster";
+
 //it acts as a bridge betweeen react and redux
 import { Provider } from "react-redux";
 import appStore from "./utils/redux-files/appStore";
@@ -96,4 +99,9 @@ const appRouter = createBrowserRouter([
 
 const rootFile = ReactDOM.createRoot(document.getElementById("rootFile"));
 
-rootFile.render(<RouterProvider router={appRouter} />);
+rootFile.render(
+	<>
+		<RouterProvider router={appRouter} />
+		<Toaster />
+	</>
+);

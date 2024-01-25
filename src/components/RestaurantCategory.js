@@ -25,7 +25,7 @@ const RestaurantCategory = ({ data, showItems, setExpandIndex, index }) => {
 				className="my-2 mx-4  flex justify-between py-3 items-center cursor-pointer"
 				onClick={handleClick}
 			>
-				<span className="font-bold text-base leading-3">
+				<span className="font-bold text-lg leading-3">
 					{data?.title} ({data?.itemCards?.length})
 				</span>
 				<span>{showItems ? <UpArrow /> : <DownArrow />} </span>

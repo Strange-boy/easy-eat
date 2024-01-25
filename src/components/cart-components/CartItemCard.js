@@ -16,6 +16,9 @@ import {
 	removeItem,
 } from "../../utils/redux-files/cartSlice";
 
+//in order to import the toast component
+import { useToast } from "../ui/use-toast";
+
 const CartItemCard = ({ item }) => {
 	const [quantity, setQuantity] = useState(1);
 	const [cost, setCost] = useState(
@@ -24,6 +27,9 @@ const CartItemCard = ({ item }) => {
 
 	//in order to dispatch an action
 	const dispatch = useDispatch();
+
+	//in order to display the toast message
+	const { toast } = useToast();
 
 	//we can destructure a lot of items here
 	const { id, name, itemAttribute, price, defaultPrice, imageId } =

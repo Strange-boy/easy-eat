@@ -31,18 +31,19 @@ const ItemList = ({ itemCard }) => {
 		//in order to display a random message
 		//in order to display some interesting messages to the user
 		const cartMessages = [
-			"That's your taste buds high-fiving you right now! ",
-			"Your cart is like a black hole for deliciousness. ️",
-			"Your fridge is jealous. Give it something to be jealous of. ",
+			"That's your taste buds high-fiving you right now! ❤️",
+			"Your cart is like a black hole for deliciousness. 🚀️",
+			"Your fridge is jealous. Give it something to be jealous of. 💀",
 			`Feeling adventurous? This ${item?.card?.info?.name} will take your taste buds on a trip! ✈️`,
 			`That ${item?.card?.info?.name} looks perfect with your existing picks. You're a pro! ✨`,
-			"Your cart is getting hungry... feed it more!",
-			"Treat yo'self! (You deserve it.) ",
+			"Your cart is getting hungry... feed it more! 🐼",
+			"Treat yo'self! (You deserve it.) 😇",
 		];
+
 		const randomIndex = Math.floor(Math.random() * cartMessages.length);
 
 		toast({
-			title: `${item?.card?.info?.name} ✔️`,
+			title: `${item?.card?.info?.name} 🛒`,
 			description: `${cartMessages[randomIndex]}`,
 		});
 	};

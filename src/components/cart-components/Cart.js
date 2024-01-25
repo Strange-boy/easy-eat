@@ -3,22 +3,11 @@ import { clearCart, clearAmount } from "../../utils/redux-files/cartSlice";
 import CartItemCard from "./CartItemCard";
 import OrderSummary from "./OrderSummary";
 import EmptyCart from "./EmptyCart";
-
-//in order to import components from shadcn
-import { Button } from "../ui/button";
+import ClearCartAlert from "./ClearCartAlert";
 
 const Cart = () => {
 	//here we need to subscribe to the store to show the total items present in the cart
 	const cartItems = useSelector((store) => store.cart.item);
-
-	//in order to dispatch an action
-	const dispatch = useDispatch();
-
-	//in order to clear the cart items
-	const handleClearCart = () => {
-		dispatch(clearAmount()); //in order to clear all the tabs
-		dispatch(clearCart(cartItems)); //in order to remove all the items
-	};
 
 	return (
 		<div className="min-h-screen">
@@ -33,9 +22,9 @@ const Cart = () => {
 							<p className="text-xl font-semibold">
 								Shopping Cart ({cartItems.length} items)
 							</p>
-							<Button className="font-bold text-base" onClick={handleClearCart}>
-								Clear Cart
-							</Button>
+							<div>
+								<ClearCartAlert />
+							</div>
 						</div>
 						<div className="p-2 m-2 last:border-slate-200 last:border-b-4 ">
 							{/* In order to display the content of the shopping cart */}

@@ -6,6 +6,10 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 //importing the components
 import RestaurantCategory from "./RestaurantCategory";
 
+//importing shadcn components
+import { Switch } from "./ui/switch";
+import { Label } from "./ui/label";
+
 //importing the svg's
 import DeliveryTime from "../svg/DeliveryTime";
 import IndianRupeeSymbol from "../svg/IndianRupees";
@@ -14,10 +18,14 @@ import { useState } from "react";
 
 const RestaurantMenu = () => {
 	const [expandIndex, setExpandIndex] = useState(null);
+	const [vegOnly, setVegOnly] = useState(false);
+	console.log(vegOnly);
 
 	const { id } = useParams();
 
+	//here a custom hook is used
 	const restroInfo = useRestaurantMenu(id);
+	// console.log("Restro info:", restroInfo);
 
 	if (restroInfo === null) return <Shimmer />;
 
@@ -45,6 +53,17 @@ const RestaurantMenu = () => {
 	);
 
 	// console.log(itemCategories);
+
+	//in order to filter the veg items in the menu
+	const filterVegItems = (category) => {
+		//inside the item category list
+		const vegCategory = category?.card?.card?.itemCards.filter(
+			(item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG"
+		);
+
+		console.log("Veg Items list", vegCategory);
+		return vegCategory;
+	};
 
 	return (
 		<>
@@ -85,18 +104,48 @@ const RestaurantMenu = () => {
 						</p>
 					</div>
 				</div>
+				{/* switch inorder to show the veg items only */}
+				<div className="mx-4 pt-6 pb-6 border-solid border-b-[2px] border-gray-400">
+					<div className="flex items-center space-x-2">
+						<Switch
+							id="vegItems"
+							onCheckedChange={() => {
+								setVegOnly(!vegOnly);
+							}}
+						/>
+						<Label htmlFor="vegItems" className="text-base font-semibold">
+							Veg Only
+						</Label>
+					</div>
+				</div>
 				{/* all the restaurant menu details */}
 				<div>
-					{itemCategories.map((category, index) => (
+					{itemCategories.map((category, index) => {
+						//in order to filter the veg items
+						const filteredList =
+							vegOnly == true
+								? filterVegItems(category)
+								: category?.card?.card?.itemCards;
+
+						//in order to find the heading of the category
+						const categoryHeading = category?.card?.card?.title;
+
 						//this is a controlled component
-						<RestaurantCategory
-							key={category?.card?.card?.title}
-							data={category?.card?.card}
-							showItems={index === expandIndex ? true : false}
-							setExpandIndex={(index) => setExpandIndex(index)}
-							index={index}
-						/>
-					))}
+						console.log("length", filteredList.length);
+
+						return filteredList.length === 0 ? (
+							<></>
+						) : (
+							<RestaurantCategory
+								key={categoryHeading}
+								title={categoryHeading}
+								items={filteredList}
+								showItems={index === expandIndex ? true : false}
+								setExpandIndex={(index) => setExpandIndex(index)}
+								index={index}
+							/>
+						);
+					})}
 				</div>
 			</div>
 		</>

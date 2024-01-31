@@ -49,7 +49,7 @@ const OrderSummary = () => {
 			</div>
 			<div className="mt-6 flex justify-center">
 				<button className="p-4 mx-auto text-xl bg-slate-800 text-slate-100 font-bold rounded-2xl hover:bg-slate-700">
-					Proceed to Payment
+					Proceed to Checkout
 				</button>
 			</div>
 		</div>

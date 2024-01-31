@@ -63,7 +63,7 @@ const CartItemCard = ({ item }) => {
 	};
 
 	//function to define the toast when the item is removed
-	const removeItemToast = (quantity) => {
+	const removeItemToast = () => {
 		toast({
 			title: `${name} removed`,
 			description: "Don't worry, we won't judge if you change your mind 😉",

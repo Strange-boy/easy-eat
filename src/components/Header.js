@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LOGO_HEADER } from "../utils/constants";
 import { Link, NavLink } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import useOnlineStatus from "../utils/custom-hooks/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
@@ -14,11 +14,9 @@ import SearchIcon from "../svg/SearchIcon";
 export const Header = () => {
 	const onlineStatus = useOnlineStatus();
 	const { loggedInUser } = useContext(UserContext);
-	// console.log(loggedInUser);
 
 	//we can use the selector to subscribe to the store
 	const cartItems = useSelector((store) => store.cart.item);
-	console.log(cartItems);
 
 	return (
 		<div className="flex z-30 bg-slate-50 justify-between  mx-2 my-4 rounded-md shadow-md shadow-slate-50/50 sticky top-0">

@@ -3,8 +3,9 @@ import RestaurantCards, { withBestSellingRestro } from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import useOnlineStatus from "../utils/custom-hooks/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import useRestaurantData from "../utils/custom-hooks/useRestaurantData";
 
 //now we would try to create a body component
 const Body = () => {
@@ -13,7 +14,7 @@ const Body = () => {
 	const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 	const [searchValue, setSearchValue] = useState("");
 
-	//in order to display the best selling restaurant
+	//in order to display the best selling restaurant (Higher order components)
 	const BestRestaurantCards = withBestSellingRestro(RestaurantCards);
 
 	//we are going to learn about useEffect
@@ -25,14 +26,8 @@ const Body = () => {
 	const fetchData = async () => {
 		const response = await fetch(SWIGGY_API);
 		const jsonData = await response.json();
-		// console.log(jsonData);
-
-		// console.log(
-		// 	jsonData.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
-		// );
 
 		const liveRestaurant = jsonData?.data?.cards;
-		// console.log(liveRestaurant);
 
 		liveRestaurant.forEach((restaurant) => {
 			if (restaurant.card.card.id === "restaurant_grid_listing") {
@@ -45,21 +40,7 @@ const Body = () => {
 				);
 			}
 		});
-
-		// setListOfRestaurant(
-		// 	jsonData.data.cards[5].card.card.gridElements.infoWithStyle.restaurants
-		// );
 	};
-
-	//in order to display the online status
-	const onlineStatus = useOnlineStatus();
-
-	// if (onlineStatus === false)
-	// 	return (
-	// 		<div className="flex justify-center mx-auto">
-	// 			Please check your internet connection !!
-	// 		</div>
-	// 	);
 
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (

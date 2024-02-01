@@ -1,4 +1,4 @@
-import { SWIGGY_RESTRO_MENU_P1, SWIGGY_RESTRO_MENU_P2 } from "./constants";
+import { SWIGGY_RESTRO_MENU_P1, SWIGGY_RESTRO_MENU_P2 } from "../constants";
 import { useEffect, useState } from "react";
 
 const useRestaurantMenu = (resId) => {

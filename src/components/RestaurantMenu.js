@@ -1,7 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { ITEM_CATEGORY_LIST } from "../utils/constants";
-import useRestaurantMenu from "../utils/useRestaurantMenu";
+import useRestaurantMenu from "../utils/custom-hooks/useRestaurantMenu";
 
 //importing the components
 import RestaurantCategory from "./RestaurantCategory";
@@ -39,8 +39,6 @@ const RestaurantMenu = () => {
 		totalRatingsString,
 	} = restroInfo?.data?.cards[0]?.card?.card?.info;
 
-	// console.log(restroInfo?.data?.cards[0]?.card?.card?.info);
-
 	const { itemCards } =
 		restroInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
 			?.card?.card;
@@ -52,8 +50,6 @@ const RestaurantMenu = () => {
 		(category) => category?.card?.card?.["@type"] === ITEM_CATEGORY_LIST
 	);
 
-	// console.log(itemCategories);
-
 	//in order to filter the veg items in the menu
 	const filterVegItems = (category) => {
 		//inside the item category list
@@ -61,7 +57,7 @@ const RestaurantMenu = () => {
 			(item) => item?.card?.info?.itemAttribute?.vegClassifier === "VEG"
 		);
 
-		console.log("Veg Items list", vegCategory);
+		// console.log("Veg Items list", vegCategory);
 		return vegCategory;
 	};
 

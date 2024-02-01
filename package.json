@@ -14,8 +14,8 @@
   "author": "Joel Jacob",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/preset-env": "^7.23.8",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@testing-library/react": "^14.1.2",
     "babel-jest": "^29.7.0",
     "buffer": "^6.0.3",

@@ -56,6 +56,14 @@ const Body = () => {
 		setFilteredRestaurant(restaurantList);
 	};
 
+	//on order to handle while pressing any keys
+	const handleKeyPress = (event) => {
+		if (event.key === "Enter") {
+			// Perform actions when Enter is pressed
+			handleSearchFunction();
+		}
+	};
+
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (
 		<Shimmer />
@@ -68,6 +76,9 @@ const Body = () => {
 						placeholder="Favourite Restro..."
 						className="w-60 text-base"
 						value={searchValue}
+						onKeyPress={(e) => {
+							handleKeyPress(e);
+						}}
 						onChange={(e) => {
 							setSearchValue(e.target.value);
 						}}
@@ -83,7 +94,7 @@ const Body = () => {
 				</div>
 			</div>
 			<div></div>
-			<div className="flex flex-wrap mx-auto w-4/5 ">
+			<div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  mx-auto w-4/5">
 				{/* we would use a container for individual restaurant cards */}
 				{filteredRestaurant.map((restaurant) => {
 					return (

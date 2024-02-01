@@ -3,7 +3,6 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import SearchBar from "./components/SearchBar";
 
 // import About from "./components/About";
 import Cart from "./components/cart-components/Cart";
@@ -58,10 +57,6 @@ const appRouter = createBrowserRouter([
 			{
 				path: "/",
 				element: <Body />,
-			},
-			{
-				path: "/search",
-				element: <SearchBar />,
 			},
 			{
 				path: "/cart",

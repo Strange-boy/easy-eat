@@ -3,9 +3,11 @@ import RestaurantCards, { withBestSellingRestro } from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/custom-hooks/useOnlineStatus";
-import UserContext from "../utils/UserContext";
-import useRestaurantData from "../utils/custom-hooks/useRestaurantData";
+
+//in order to import shadcn components
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import SearchIcon from "../svg/SearchIcon";
 
 //now we would try to create a body component
 const Body = () => {
@@ -42,54 +44,45 @@ const Body = () => {
 		});
 	};
 
+	//in order to handle the search functionality
+	const handleSearchFunction = () => {
+		//Filter the restaurant and display them according to the name
+		console.log(searchValue);
+
+		const restaurantList = listOfRestaurant.filter((restro) => {
+			return restro.info.name.toLowerCase().includes(searchValue.toLowerCase());
+		});
+
+		setFilteredRestaurant(restaurantList);
+	};
+
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (
 		<Shimmer />
 	) : (
-		<div className="body">
+		<div className="min-h-screen">
 			<div className="filter flex justify-center my-6">
-				<div className="">
-					<input
+				<div className="flex gap-1 justify-center">
+					<Input
 						type="text"
-						className="px- 3 border-2 rounded-full border-gray-500"
+						placeholder="Favourite Restro..."
+						className="w-60 text-base"
 						value={searchValue}
 						onChange={(e) => {
 							setSearchValue(e.target.value);
 						}}
 					/>
-					<button
-						className="mx-2 px-2 py-1 bg-gray-500 hover:bg-gray-800 rounded-xl shadow-lg text-stone-50 font-semibold"
-						onClick={() => {
-							//Filter the restaurant and display them according to the name
-							console.log(searchValue);
-
-							const restaurantList = listOfRestaurant.filter((restro) => {
-								return restro.info.name
-									.toLowerCase()
-									.includes(searchValue.toLowerCase());
-							});
-
-							setFilteredRestaurant(restaurantList);
-						}}
+					<Button
+						className="text-base font-semibold"
+						onClick={handleSearchFunction}
 					>
-						Search
-					</button>
+						<span className="inline-block">
+							<SearchIcon />
+						</span>
+					</Button>
 				</div>
-				<button
-					className="mx-1 px-2 py-0 bg-gray-500 hover:bg-gray-800 rounded-lg shadow-lg text-stone-50 font-semibold"
-					onClick={() => {
-						// console.log("Before items", listOfRestaurant);
-						const topRestaurant = listOfRestaurant.filter((rest) => {
-							return rest.info.avgRating >= 4.5;
-						});
-
-						// console.log(topRestaurant);
-						setFilteredRestaurant(topRestaurant);
-					}}
-				>
-					Top Restaurant
-				</button>
 			</div>
+			<div></div>
 			<div className="flex flex-wrap mx-auto w-4/5 ">
 				{/* we would use a container for individual restaurant cards */}
 				{filteredRestaurant.map((restaurant) => {

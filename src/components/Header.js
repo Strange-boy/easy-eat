@@ -30,29 +30,11 @@ export const Header = () => {
 				</Link>
 			</div>
 			<div className="flex items-center text-xl font-bold">
-				<ul className="flex p-2">
+				<ul className="flex p-2 items-center">
 					<li className="pr-2 text-lg  text-gray-600 hover:text-gray-950">
 						Online status: {onlineStatus ? "✅" : "❎"}
 					</li>
-					<li>
-						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 hover:text-gray-950 "
-							to="/grocery"
-						>
-							Grocery
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 flex items-center gap-1 pb-1 font-bold hover:text-gray-950 hover:border-b-2 hover:border-gray-950"
-							to="/search"
-						>
-							<div className="inline-block mt-1">
-								<SearchIcon />
-							</div>
-							<div className="mt-1">Search</div>
-						</NavLink>
-					</li>
+
 					<li>
 						<NavLink
 							className="mx-1 px-2 text-lg text-gray-600 flex items-center hover:text-gray-950  hover:border-b-2 hover:border-gray-950"

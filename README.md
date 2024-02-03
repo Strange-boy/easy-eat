@@ -1,29 +1,30 @@
-Jo's Kitchen 
+# Jo's Kitchen
 
-here i try to build an application similar to swiggy and zomato
-
-Low level Design of the file:
-The compoenent layout:
-
-1.Header
-	i.Logo
-	ii. Nav bar
-		1.Home 
-		2.About us
-		3.Contact us
-		4.Cart
-
-2.Body
-	i. Search bar
-	ii.Restaurant container
-		1. Star rating
-		2. cuisine
-		3. Price
-		4. Image
-		5. Type of delivery
+**Looking to satisfy your cravings without the hassle? Look no further! This project presents Jo's Kitchen, a user-friendly food ordering app**
 
 
-3.Footer
-	i.Address
-	ii.Copyrights
+## Key Features:
 
+1. *Lightning-fast Search:* ⚡ Find your favorite restaurants or explore new ones instantly with super-responsive search bar. No more waiting for results!
+2. *Effortless Browsing:* ✨ Seamlessly navigate stunning menus
+3. *Smooth Ordering:* 🍦 Place your order with ease using an intuitive interface. No more fumbling, just pure ordering satisfaction.
+
+### Built with:
+
+
+### Key Learnings:
+1.  🔎 Created a search bar with **Debouncing** functionality for efficient performance 
+
+2. 🪝 Implemented multiple **custom hooks** :
+	- To fetch restaurant menu data
+	- To fetch restaurant information
+	- To check online status
+	- To perform debouncing
+
+3.  ⚡  Used **Higher-Order Components (HOCs)** to display the best-selling restaurant
+4.  Created an *Accordion component* from scratch using the concept of **lifting state up** 
+5.  🚀 Understood the data flow in Redux and used the *Redux Toolkit* for **efficient state management**
+6.  🎨 Used *Tailwind CSS* for styling, accelerating development with its utility-first approach .
+7.  🀦 Used *shadcn-ui* in order to integrate beautiful UI components into the project (checkout the sonner component)
+8.  🕵️ Used *React Testing Library and Jest* for testing 
+ 

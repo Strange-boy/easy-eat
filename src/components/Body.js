@@ -43,7 +43,7 @@ const Body = () => {
 	};
 
 	//in order to debounce the searching
-	const debouncedSearchQuery = useDebounce(searchValue, 500);
+	const debouncedSearchQuery = useDebounce(searchValue, 300);
 
 	//in order to find the filtered restaurant
 	const filteredRestaurant = useMemo(() => {

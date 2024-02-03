@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 
 //in order to import shadcn components
 import { Input } from "./ui/input";
-import { Button } from "./ui/button";
 import SearchIcon from "../svg/SearchIcon";
+
+//in order to provide the debounce functionality
+import useDebounce from "../utils/custom-hooks/useDebounce";
 
 //now we would try to create a body component
 const Body = () => {
@@ -40,6 +42,9 @@ const Body = () => {
 		});
 	};
 
+	//in order to debounce the searching
+	const debouncedSearchQuery = useDebounce(searchValue, 500);
+
 	//in order to find the filtered restaurant
 	const filteredRestaurant = useMemo(() => {
 		return listOfRestaurant.filter((restaurant) => {
@@ -47,7 +52,7 @@ const Body = () => {
 				.toLowerCase()
 				.includes(searchValue.toLowerCase());
 		});
-	}, [listOfRestaurant, searchValue]);
+	}, [listOfRestaurant, debouncedSearchQuery]);
 
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (

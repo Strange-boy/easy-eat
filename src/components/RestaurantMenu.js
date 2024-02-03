@@ -127,7 +127,9 @@ const RestaurantMenu = () => {
 						const categoryHeading = category?.card?.card?.title;
 
 						//this is a controlled component
-						console.log("length", filteredList.length);
+						{
+							/* console.log("length", filteredList.length); */
+						}
 
 						return filteredList.length === 0 ? (
 							<></>

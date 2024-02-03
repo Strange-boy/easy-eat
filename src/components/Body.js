@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useMemo } from "react";
 import RestaurantCards, { withBestSellingRestro } from "./RestaurantCards";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
@@ -13,11 +13,11 @@ import SearchIcon from "../svg/SearchIcon";
 const Body = () => {
 	//here we would use the super charged react variables to dynamically render the components
 	const [listOfRestaurant, setListOfRestaurant] = useState([]);
-	const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 	const [searchValue, setSearchValue] = useState("");
 
 	//in order to display the best selling restaurant (Higher order components)
 	const BestRestaurantCards = withBestSellingRestro(RestaurantCards);
+	// console.log(listOfRestaurant);
 
 	//we are going to learn about useEffect
 	useEffect(() => {
@@ -36,33 +36,18 @@ const Body = () => {
 				setListOfRestaurant(
 					restaurant?.card?.card?.gridElements?.infoWithStyle?.restaurants
 				);
-
-				setFilteredRestaurant(
-					restaurant?.card?.card?.gridElements?.infoWithStyle?.restaurants
-				);
 			}
 		});
 	};
 
-	//in order to handle the search functionality
-	const handleSearchFunction = () => {
-		//Filter the restaurant and display them according to the name
-		console.log(searchValue);
-
-		const restaurantList = listOfRestaurant.filter((restro) => {
-			return restro.info.name.toLowerCase().includes(searchValue.toLowerCase());
+	//in order to find the filtered restaurant
+	const filteredRestaurant = useMemo(() => {
+		return listOfRestaurant.filter((restaurant) => {
+			return restaurant?.info?.name
+				.toLowerCase()
+				.includes(searchValue.toLowerCase());
 		});
-
-		setFilteredRestaurant(restaurantList);
-	};
-
-	//on order to handle while pressing any keys
-	const handleKeyPress = (event) => {
-		if (event.key === "Enter") {
-			// Perform actions when Enter is pressed
-			handleSearchFunction();
-		}
-	};
+	}, [listOfRestaurant, searchValue]);
 
 	//conditional rendering
 	return listOfRestaurant.length === 0 ? (
@@ -70,27 +55,19 @@ const Body = () => {
 	) : (
 		<div className="min-h-screen">
 			<div className="filter flex justify-center my-6">
-				<div className="flex gap-1 justify-center">
+				<div className="flex gap-1 justify-center relative">
 					<Input
-						type="text"
+						type="search"
 						placeholder="Favourite Restro..."
-						className="w-60 text-base"
+						className="text-base pl-10"
 						value={searchValue}
-						onKeyPress={(e) => {
-							handleKeyPress(e);
-						}}
 						onChange={(e) => {
 							setSearchValue(e.target.value);
 						}}
 					/>
-					<Button
-						className="text-base font-semibold"
-						onClick={handleSearchFunction}
-					>
-						<span className="inline-block">
-							<SearchIcon />
-						</span>
-					</Button>
+					<span className="inline-block absolute left-2 inset-y-1">
+						<SearchIcon />
+					</span>
 				</div>
 			</div>
 			<div></div>

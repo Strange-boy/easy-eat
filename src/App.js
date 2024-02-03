@@ -19,6 +19,7 @@ import { Toaster } from "./components/ui/toaster";
 import { Provider } from "react-redux";
 import appStore from "./utils/redux-files/appStore";
 import Footer from "./components/Footer";
+import { Contact } from "./components/Contact";
 
 // import Grocery from "./components/Grocery";
 
@@ -57,6 +58,10 @@ const appRouter = createBrowserRouter([
 			{
 				path: "/",
 				element: <Body />,
+			},
+			{
+				path: "/contact",
+				element: <Contact />,
 			},
 			{
 				path: "/cart",

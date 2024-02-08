@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707391718230" clover="3.2.0">
-  <project timestamp="1707391718230" name="All files">
-    <metrics statements="145" coveredstatements="88" conditionals="25" coveredconditionals="4" methods="53" coveredmethods="18" elements="223" coveredelements="110" complexity="0" loc="145" ncloc="145" packages="8" files="18" classes="18"/>
+<coverage generated="1707393840143" clover="3.2.0">
+  <project timestamp="1707393840144" name="All files">
+    <metrics statements="143" coveredstatements="88" conditionals="25" coveredconditionals="4" methods="52" coveredmethods="19" elements="220" coveredelements="111" complexity="0" loc="143" ncloc="143" packages="8" files="17" classes="17"/>
     <package name="components">
-      <metrics statements="17" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="5"/>
+      <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="6"/>
       <file name="Contact.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/components/Contact.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
@@ -18,20 +18,15 @@
         <line num="21" count="2" type="stmt"/>
       </file>
       <file name="RestaurantCards.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/components/RestaurantCards.js">
-        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-      </file>
-      <file name="Sum.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/components/Sum.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.cart-components">
@@ -161,7 +156,7 @@
       <file name="RatingSvg.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/svg/RatingSvg.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
       </file>
       <file name="SearchIcon.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/svg/SearchIcon.js">
         <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>

@@ -1,38 +1,38 @@
 {
     "info": {
-        "id": "560083",
-        "name": "Thai's Kitchen",
-        "cloudinaryImageId": "een1ktspu8vhu1izepgy",
-        "locality": "Valiyamaram Ward",
-        "areaName": "Anantha Narayanapuram",
-        "costForTwo": "₹200 for two",
+        "id": "133674",
+        "name": "Arabian Shake Cafe -Indira Jn",
+        "cloudinaryImageId": "f00d1380254061f2841852366ae51735",
+        "locality": "Kaichoondi",
+        "areaName": "Kommady",
+        "costForTwo": "₹250 for two",
         "cuisines": [
             "Chinese",
-            "North Indian",
-            "Biryani",
+            "Continental",
             "Pizzas",
-            "Hyderabadi",
-            "Snacks",
-            "Indian"
+            "Salads",
+            "Pastas",
+            "Beverages"
         ],
-        "avgRating": 4.2,
-        "parentId": "337225",
-        "avgRatingString": "4.2",
-        "totalRatingsString": "500+",
+        "avgRating": 4.4,
+        "parentId": "241172",
+        "avgRatingString": "4.4",
+        "totalRatingsString": "5K+",
         "sla": {
-            "deliveryTime": 24,
-            "lastMileTravel": 1.7,
+            "deliveryTime": 29,
+            "lastMileTravel": 1.6,
             "serviceability": "SERVICEABLE",
-            "slaString": "20-25 mins",
-            "lastMileTravelString": "1.7 km",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "1.6 km",
             "iconType": "ICON_TYPE_EMPTY"
         },
         "availability": {
-            "nextCloseTime": "2024-02-08 23:45:00",
+            "nextCloseTime": "2024-02-08 22:50:00",
             "opened": true
         },
         "badges": {},
         "isOpen": true,
+        "aggregatedDiscountInfoV2": {},
         "type": "F",
         "badgesV2": {
             "entityBadges": {
@@ -40,10 +40,6 @@
                 "textBased": {},
                 "textExtendedBadges": {}
             }
-        },
-        "aggregatedDiscountInfoV3": {
-            "header": "50% OFF",
-            "subHeader": "UPTO ₹100"
         },
         "orderabilityCommunication": {
             "title": {},
@@ -64,10 +60,10 @@
         "restaurantOfferPresentationInfo": {}
     },
     "analytics": {
-        "context": "seo-data-d69c075a-f82f-4d66-8430-93bf9f2a7e27"
+        "context": "seo-data-7855981f-db40-4aeb-801a-e2d5ce6be458"
     },
     "cta": {
-        "link": "https://www.swiggy.com/restaurants/thais-kitchen-valiyamaram-ward-anantha-narayanapuram-alappuzha-560083",
+        "link": "https://www.swiggy.com/restaurants/arabian-shake-cafe-indira-jn-kaichoondi-kommady-alappuzha-133674",
         "text": "RESTAURANT_MENU",
         "type": "WEBLINK"
     },

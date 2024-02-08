@@ -10,7 +10,7 @@
 3. *Smooth Ordering:* 🍦 Place your order with ease using an intuitive interface. No more fumbling, just pure ordering satisfaction.
 
 ### Built with:
-<img src="https://ezicons.cftutorial.workers.dev/icons/?icons=skills-dark-html5,skills-dark-css,skills-dark-tailwind,skills-dark-js,skills-dark-reactjs,skills-dark-redux,skills-dark-jest,skills-dark-git&perLine=7&gap=10&dimension=60"/>
+<img src="https://ezicons.cftutorial.workers.dev/icons/?icons=skills-dark-html5,skills-dark-css,skills-dark-tailwind,skills-dark-js,skills-dark-reactjs,skills-dark-redux,skills-dark-jest,skills-dark-git&perLine=8&gap=10&dimension=60"/>
 
 
 ### Key Learnings:

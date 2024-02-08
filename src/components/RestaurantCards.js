@@ -8,6 +8,7 @@ import RatingSvg from "../svg/RatingSvg";
 const RestaurantCards = (props) => {
 	// console.log(props);
 	const { resData } = props;
+	console.log("Restro data", resData);
 	// const { loggedInUser } = useContext(UserContext);
 
 	const {

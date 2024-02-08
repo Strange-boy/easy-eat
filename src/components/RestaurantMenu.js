@@ -14,7 +14,7 @@ import { Label } from "./ui/label";
 import DeliveryTime from "../svg/DeliveryTime";
 import IndianRupeeSymbol from "../svg/IndianRupees";
 import RatingSvg from "../svg/RatingSvg";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 const RestaurantMenu = () => {
 	const [expandIndex, setExpandIndex] = useState(null);
@@ -132,7 +132,7 @@ const RestaurantMenu = () => {
 						}
 
 						return filteredList.length === 0 ? (
-							<></>
+							<Fragment key={categoryHeading}></Fragment>
 						) : (
 							<RestaurantCategory
 								key={categoryHeading}

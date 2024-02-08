@@ -1,0 +1,75 @@
+{
+    "info": {
+        "id": "560083",
+        "name": "Thai's Kitchen",
+        "cloudinaryImageId": "een1ktspu8vhu1izepgy",
+        "locality": "Valiyamaram Ward",
+        "areaName": "Anantha Narayanapuram",
+        "costForTwo": "₹200 for two",
+        "cuisines": [
+            "Chinese",
+            "North Indian",
+            "Biryani",
+            "Pizzas",
+            "Hyderabadi",
+            "Snacks",
+            "Indian"
+        ],
+        "avgRating": 4.2,
+        "parentId": "337225",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "500+",
+        "sla": {
+            "deliveryTime": 24,
+            "lastMileTravel": 1.7,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "1.7 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-02-08 23:45:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "50% OFF",
+            "subHeader": "UPTO ₹100"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-d69c075a-f82f-4d66-8430-93bf9f2a7e27"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/thais-kitchen-valiyamaram-ward-anantha-narayanapuram-alappuzha-560083",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}

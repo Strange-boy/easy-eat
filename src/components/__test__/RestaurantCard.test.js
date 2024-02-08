@@ -1,8 +1,8 @@
 
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import RestaurantCards, {withBestSellingRestro} from "../RestaurantCards";
 
-import MOCK_DATA from "../mocks/RestaurantCardData.json"
+import MOCK_DATA from "../mocks/restaurantCardData.json"
 import "@testing-library/jest-dom"
 
 

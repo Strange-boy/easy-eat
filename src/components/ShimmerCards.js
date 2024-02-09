@@ -13,6 +13,9 @@ const ShimmerCards = () => {
 							<div className="h-4 bg-slate-300 rounded col-span-1"></div>
 						</div>
 						<div className="h-4 bg-slate-300 rounded"></div>
+						<div className="grid grid-cols-3 gap-2">
+							<div className="h-4 bg-slate-300 rounded col-span-2"></div>
+						</div>
 					</div>
 				</div>
 			</div>

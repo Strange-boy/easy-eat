@@ -32,16 +32,9 @@ export const Header = () => {
 			<div className="flex items-center text-xl font-bold">
 				<ul className="flex p-2 items-center">
 					<li className="pr-2 text-lg  text-gray-600 hover:text-gray-950">
-						Online status: {onlineStatus ? "✅" : "❎"}
+						Online: {onlineStatus ? "🟢" : "🔴"}
 					</li>
-					<li>
-						<NavLink
-							className="mx-1 px-2 text-lg text-gray-600 flex items-center gap-1 font-bold hover:text-gray-950 "
-							to="/contact"
-						>
-							contact us
-						</NavLink>
-					</li>
+
 					<li>
 						<NavLink
 							className="mx-1 px-2 text-lg text-gray-600 flex items-center hover:text-gray-950  hover:border-b-2 hover:border-gray-950"
@@ -51,7 +44,10 @@ export const Header = () => {
 								<span className="inline-block mt-1 w-8">
 									<CartIcon />
 								</span>
-								<span data-testid="cartItemsCount" className="absolute right-2 bg-slate-600 text-white text-xs rounded-full font-semibold px-1">
+								<span
+									data-testid="cartItemsCount"
+									className="absolute right-2 bg-slate-600 text-white text-xs rounded-full font-semibold px-1"
+								>
 									{cartItems.length}
 								</span>
 							</div>

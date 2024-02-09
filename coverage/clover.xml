@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707402924891" clover="3.2.0">
-  <project timestamp="1707402924891" name="All files">
-    <metrics statements="28" coveredstatements="27" conditionals="6" coveredconditionals="6" methods="11" coveredmethods="10" elements="45" coveredelements="43" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
+<coverage generated="1707460446710" clover="3.2.0">
+  <project timestamp="1707460446710" name="All files">
+    <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="6" methods="11" coveredmethods="11" elements="45" coveredelements="45" complexity="0" loc="28" ncloc="28" packages="1" files="2" classes="2"/>
     <file name="Body.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/components/Body.js">
-      <metrics statements="20" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="7"/>
+      <metrics statements="20" coveredstatements="20" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
       <line num="15" count="1" type="stmt"/>
-      <line num="17" count="2" type="stmt"/>
-      <line num="18" count="2" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="30" count="2" type="stmt"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="34" count="1" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="37" count="12" type="cond" truecount="2" falsecount="0"/>
-      <line num="38" count="1" type="stmt"/>
-      <line num="46" count="2" type="stmt"/>
-      <line num="49" count="2" type="stmt"/>
-      <line num="50" count="2" type="stmt"/>
-      <line num="51" count="9" type="stmt"/>
-      <line num="58" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="70" count="0" type="stmt"/>
-      <line num="82" count="9" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="18" count="6" type="stmt"/>
+      <line num="21" count="6" type="stmt"/>
+      <line num="25" count="6" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="30" count="6" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="37" count="24" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="2" type="stmt"/>
+      <line num="46" count="6" type="stmt"/>
+      <line num="49" count="6" type="stmt"/>
+      <line num="50" count="5" type="stmt"/>
+      <line num="51" count="27" type="stmt"/>
+      <line num="58" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="83" count="28" type="stmt"/>
     </file>
     <file name="RestaurantCards.js" path="/home/curiouskid/Shin sei/React projects/Jo's Kitchen/src/components/RestaurantCards.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <line num="8" count="2" type="stmt"/>
-      <line num="10" count="11" type="stmt"/>
-      <line num="11" count="11" type="stmt"/>
-      <line num="22" count="11" type="stmt"/>
-      <line num="24" count="11" type="stmt"/>
+      <line num="10" count="30" type="stmt"/>
+      <line num="11" count="30" type="stmt"/>
+      <line num="22" count="30" type="stmt"/>
+      <line num="24" count="30" type="stmt"/>
       <line num="59" count="2" type="stmt"/>
-      <line num="60" count="3" type="stmt"/>
-      <line num="61" count="4" type="stmt"/>
+      <line num="60" count="7" type="stmt"/>
+      <line num="61" count="10" type="stmt"/>
     </file>
   </project>
 </coverage>

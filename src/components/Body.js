@@ -62,6 +62,7 @@ const Body = () => {
 			<div className="filter flex justify-center my-6">
 				<div className="flex gap-1 justify-center relative">
 					<Input
+						data-testid="searchInput"
 						type="search"
 						placeholder="Favourite Restro..."
 						className="text-base pl-10"

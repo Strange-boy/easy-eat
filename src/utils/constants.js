@@ -15,5 +15,3 @@ export const SWIGGY_RESTRO_MENU_P2 = "&catalog_qa=undefined&submitAction=ENTER";
 
 export const ITEM_CATEGORY_LIST =
 	"type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
-
-export const GITHUB_LINK = "https://github.com/Strange-boy";

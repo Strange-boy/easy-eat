@@ -1,4 +1,4 @@
-# Jo's Kitchen
+# Easy eat
 
 **Looking to satisfy your cravings without the hassle? Look no further! This project presents Jo's Kitchen, a user-friendly food ordering app**
 
@@ -28,4 +28,5 @@
 6.  🎨 Used *Tailwind CSS* for styling, accelerating development with its utility-first approach .
 7.  🀦 Used *shadcn-ui* in order to integrate beautiful UI components into the project (checkout the sonner component)
 8.  🕵️ Used *React Testing Library and Jest* for testing 
- 
+ 	   - *Unit test*:  Header, Cart and Body component
+	   - *Integration test*: Adding items to cart and Search feature

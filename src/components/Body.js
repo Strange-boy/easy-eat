@@ -19,7 +19,6 @@ const Body = () => {
 
 	//in order to display the best selling restaurant (Higher order components)
 	const BestRestaurantCards = withBestSellingRestro(RestaurantCards);
-	// console.log(listOfRestaurant);
 
 	//we are going to learn about useEffect
 	useEffect(() => {

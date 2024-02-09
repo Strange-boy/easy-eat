@@ -6,10 +6,8 @@ import RatingSvg from "../svg/RatingSvg";
 
 //now we would use restaurant cards to call each of the restaurants
 const RestaurantCards = (props) => {
-	// console.log(props);
 	const { resData } = props;
-	console.log("Restro data", resData);
-	// const { loggedInUser } = useContext(UserContext);
+
 
 	const {
 		cloudinaryImageId,

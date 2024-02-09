@@ -51,7 +51,7 @@ export const Header = () => {
 								<span className="inline-block mt-1 w-8">
 									<CartIcon />
 								</span>
-								<span className="absolute right-2 bg-slate-600 text-white text-xs rounded-full font-semibold px-1">
+								<span data-testid="cartItemsCount" className="absolute right-2 bg-slate-600 text-white text-xs rounded-full font-semibold px-1">
 									{cartItems.length}
 								</span>
 							</div>

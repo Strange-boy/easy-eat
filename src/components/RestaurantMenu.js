@@ -19,7 +19,6 @@ import { Fragment, useState } from "react";
 const RestaurantMenu = () => {
 	const [expandIndex, setExpandIndex] = useState(null);
 	const [vegOnly, setVegOnly] = useState(false);
-	console.log(vegOnly);
 
 	const { id } = useParams();
 

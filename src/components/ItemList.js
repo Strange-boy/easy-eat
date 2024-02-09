@@ -53,6 +53,7 @@ const ItemList = ({ itemCard }) => {
 		<div>
 			{itemCard.map((item) => (
 				<div
+					data-testid="itemList"
 					key={item?.card?.info?.id}
 					className="my-2 mx-4 pb-4 pt-2 border-b-4 border-gray-100 last:border-b-0 flex justify-between items-center"
 				>

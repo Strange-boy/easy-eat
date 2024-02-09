@@ -29,7 +29,11 @@ const Cart = () => {
 						<div className="p-2 m-2 last:border-slate-200 last:border-b-4 ">
 							{/* In order to display the content of the shopping cart */}
 							{cartItems.map((item) => (
-								<CartItemCard key={item?.card?.info?.name} item={item} />
+								<CartItemCard
+									data-testid="itemsInCart"
+									key={item?.card?.info?.name}
+									item={item}
+								/>
 							))}
 						</div>
 					</div>

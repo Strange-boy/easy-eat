@@ -2,6 +2,8 @@
 
 **Looking to satisfy your cravings without the hassle? Look no further! This project presents Jo's Kitchen, a user-friendly food ordering app**
 
+## Troubleshoot:
+Application functionality may be limited due to API CORS restrictions by swiggy. Consider installing the CORS extension for [Chrome](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/) in case the application doesn't properly run in your end
 
 ## Key Features:
 
@@ -26,7 +28,7 @@
 4.  Created an *Accordion component* from scratch using the concept of **lifting state up** 
 5.  🚀 Understood the data flow in Redux and used the *Redux Toolkit* for **efficient state management**
 6.  🎨 Used *Tailwind CSS* for styling, accelerating development with its utility-first approach .
-7.  🀦 Used *shadcn-ui* in order to integrate beautiful UI components into the project (checkout the sonner component)
+7.  🀦 Used *shadcn-ui* in order to integrate beautiful UI components into the project (checkout the toast component)
 8.  🕵️ Used *React Testing Library and Jest* for testing 
  	   - *Unit test*:  Header, Cart and Body component
 	   - *Integration test*: Adding items to cart and Search feature

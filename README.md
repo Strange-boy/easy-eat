@@ -1,6 +1,6 @@
 # Easy eat
 
-**Looking to satisfy your cravings without the hassle? Look no further! This project presents Jo's Kitchen, a user-friendly food ordering app**
+**Looking to satisfy your cravings without the hassle? Look no further! This project presents Easy eat, a user-friendly food ordering app**
 
 ## Video Demo
 

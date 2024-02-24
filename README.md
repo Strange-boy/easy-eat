@@ -1,6 +1,12 @@
 # Easy eat
 
-**Looking to satisfy your cravings without the hassle? Look no further! This project presents Jo's Kitchen, a user-friendly food ordering app**
+**Looking to satisfy your cravings without the hassle? Look no further! This project presents Easy eat, a user-friendly food ordering app**
+
+## Video Demo
+
+https://github.com/Strange-boy/easy-eat/assets/63555243/60d6becb-482a-4003-b138-48d98eddd762
+
+### [Live Demo - click here](easy-eat.vercel.app)
 
 ## Troubleshoot:
 Application functionality may be limited due to API CORS restrictions by swiggy. Consider installing the CORS extension for [Chrome](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/) in case the application doesn't properly run in your end

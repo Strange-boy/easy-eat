@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
 
 	//here a custom hook is used
 	const restroInfo = useRestaurantMenu(id);
-	console.log("Restro info:", restroInfo);
+	// console.log("Restro info:", restroInfo);
 
 	if (restroInfo === null) return <Shimmer />;
 

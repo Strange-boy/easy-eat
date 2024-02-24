@@ -6,7 +6,7 @@
 
 https://github.com/Strange-boy/easy-eat/assets/63555243/60d6becb-482a-4003-b138-48d98eddd762
 
-### [Live Demo - click here](easy-eat.vercel.app)
+### [Live Demo - click here](https://easy-eat.vercel.app/)
 
 ## Troubleshoot:
 Application functionality may be limited due to API CORS restrictions by swiggy. Consider installing the CORS extension for [Chrome](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/access-control-allow-origin/) in case the application doesn't properly run in your end

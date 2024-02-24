@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
 
 	//here a custom hook is used
 	const restroInfo = useRestaurantMenu(id);
-	// console.log("Restro info:", restroInfo);
+	console.log("Restro info:", restroInfo);
 
 	if (restroInfo === null) return <Shimmer />;
 
@@ -36,14 +36,10 @@ const RestaurantMenu = () => {
 		areaName,
 		sla,
 		totalRatingsString,
-	} = restroInfo?.data?.cards[0]?.card?.card?.info;
-
-	const { itemCards } =
-		restroInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-			?.card?.card;
+	} = restroInfo?.data?.cards[2]?.card?.card?.info;
 
 	const categories =
-		restroInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+		restroInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
 	const itemCategories = categories.filter(
 		(category) => category?.card?.card?.["@type"] === ITEM_CATEGORY_LIST

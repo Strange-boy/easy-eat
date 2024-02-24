@@ -8,7 +8,6 @@ import RatingSvg from "../svg/RatingSvg";
 const RestaurantCards = (props) => {
 	const { resData } = props;
 
-
 	const {
 		cloudinaryImageId,
 		name,
@@ -20,7 +19,7 @@ const RestaurantCards = (props) => {
 	} = resData.info;
 
 	return (
-		<div className="m-2 p-2 w-[340px] hover:shadow-xl hover:scale-105 hover:ease-in duration-300 ">
+		<div className="m-2 p-2 w-[340px] hover:shadow-xl hover:scale-105 hover:ease-in duration-300 hover:rounded-md">
 			<div className="restro-card" data-testid="restroCards">
 				<img
 					className="h-64 w-full rounded-2xl object-cover"
@@ -59,7 +58,6 @@ export const withBestSellingRestro = (RestaurantCards) => {
 		return (
 			<div>
 				<label
-					
 					htmlFor=""
 					className="absolute z-10 bg-green-600 m-2 p-2 font-semibold text-slate-100 rounded-e-lg hover:scale-105 hover:ease-in duration-300"
 				>
